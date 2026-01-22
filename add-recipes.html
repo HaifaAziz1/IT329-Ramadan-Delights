@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Recipe | Ramadan Delights</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- ====== HEADER ====== -->
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="HomePage.html">
+      <img src="image/RamadanLogo.png" alt="Ramadan Delights Logo" class="logo">
+      <span class="brand-name">Ramadan Delights</span>
+    </a>
+
+    <nav class="nav">
+      <a href="user.html" class="nav-link">Dashboard</a>
+      <a href="my-recipes.html" class="nav-link">My Recipes</a>
+      <a href="add-recipe.html" class="nav-link nav-btn">Add Recipe</a>
+      <a href="HomePage.html" class="nav-link">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container add-recipe-page">
+
+  <h1 class="page-title">Add New Recipe</h1>
+
+  <form id="add-recipe-form">
+
+    <!-- Recipe Title -->
+    <div class="form-group">
+      <label for="title">Recipe Title</label>
+      <input type="text" name="title" id="title" class="input-field" placeholder="Recipe Name">
+    </div>
+
+    <!-- Recipe Image -->
+    <div class="form-group">
+      <label for="recipe-image">Recipe Image</label>
+      <input type="file" id="recipe-image" accept="image/*">
+      <img id="preview-image" src="image/default-recipe.jpg" alt="Preview" class="recipe-thumb">
+    </div>
+
+    <!-- Ingredients -->
+    <div class="form-group">
+      <label>Ingredients</label>
+      <div id="ingredients-container">
+        <input type="text" name="ingredients[]" placeholder="Ingredient" class="input-field">
+      </div>
+      <button type="button" id="add-ingredient-btn" class="btn">+ Add Another Ingredient</button>
+    </div>
+
+    <!-- Steps / Instructions -->
+    <div class="form-group">
+      <label>Instructions</label>
+      <div id="steps-container">
+        <input type="text" name="steps[]" placeholder="Step" class="input-field">
+      </div>
+      <button type="button" id="add-step-btn" class="btn">+ Add Another Step</button>
+    </div>
+
+    <button type="submit" class="btn">Submit Recipe</button>
+
+  </form>
+
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="site-footer">
+  <div class="container footer-row">
+    <p class="footer-text">© 2026 Ramadan Delights. All rights reserved.</p>
+    <div class="footer-icons">
+      <a href="#"><img src="image/email.png" alt="email"></a>
+      <a href="#"><img src="image/instagram.png" alt="instagram"></a>
+      <a href="#"><img src="image/twitter.png" alt="twitter"></a>
+      <a href="#"><img src="image/phone-call.png" alt="phone"></a>
+      <a href="#"><img src="image/whatsapp.png" alt="whatsapp"></a>
+      <a href="#"><img src="image/facebook.png" alt="facebook"></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
