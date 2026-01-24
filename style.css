@@ -2,7 +2,7 @@
   --main: #607975;
   --light: #e8eeda;
   --white: #ffffff;
-  --text: #1c2a2a;
+  --text: #2f3b36; 
 }
 
 *{ box-sizing: border-box; }
@@ -160,23 +160,24 @@ main{
 }
 
 .btn:hover{
-  opacity: 0.9;
+  background: #7a907f; 
 }
 
 .table{
   width: 100%;
   border-collapse: collapse;
-  background: var(--white);
+  background: var(--light); 
   border-radius: 16px;
   overflow: hidden;
 }
 
 .table th,
 .table td{
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #d3d3c4;
   padding: 14px;
   vertical-align: top;
   font-size: 14px;
+  color: var(--text);
 }
 
 .table th{
@@ -224,7 +225,7 @@ main{
 }
 
 .my-recipes-page .summary-card{
-  background: var(--white);
+  background: var(--light); 
   padding: 18px;
   border-radius: 18px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.06);
@@ -233,7 +234,7 @@ main{
 .my-recipes-page .summary-card h3{
   margin: 0;
   font-size: 13px;
-  color: #777;
+  color: #4d594f; 
 }
 
 .my-recipes-page .summary-card p{
@@ -252,7 +253,7 @@ main{
 /* ========================= */
 
 .add-recipe-page form{
-  background: var(--white);
+  background: var(--light); 
   padding: 26px;
   border-radius: 20px;
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
@@ -271,15 +272,21 @@ main{
   margin-bottom: 8px;
 }
 
-.add-recipe-page .input-field{
+.add-recipe-page .input-field,
+.add-recipe-page select,
+.add-recipe-page textarea{
   width: 100%;
   padding: 12px 14px;
   border-radius: 12px;
   border: 1px solid #ccc;
   font-size: 14px;
+  color: var(--text);
+  background: var(--white);
 }
 
-.add-recipe-page .input-field:focus{
+.add-recipe-page .input-field:focus,
+.add-recipe-page select:focus,
+.add-recipe-page textarea:focus{
   outline: none;
   border-color: var(--main);
 }
