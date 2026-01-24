@@ -4,45 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Recipes | Ramadan Delights</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<!-- ====== HEADER ====== -->
+<body class="page-layout">
+
 <header class="site-header">
   <div class="container header-row">
     <a class="brand" href="HomePage.html">
-      <img src="image/RamadanLogo.png" alt="Ramadan Delights Logo" class="logo">
+      <img src="image/RamadanLogo.png" class="logo" alt="">
       <span class="brand-name">Ramadan Delights</span>
     </a>
 
-    <!-- NAV user-pages -->
     <nav class="nav">
       <a href="user.html" class="nav-link">Dashboard</a>
-      <a href="my-recipes.html" class="nav-link">My Recipes</a>
-      <a href="add-recipe.html" class="nav-link nav-btn">Add Recipe</a>
+      <a href="my-recipes.html" class="nav-link nav-btn">My Recipes</a>
+      <a href="add-recipe.html" class="nav-link">Add Recipe</a>
       <a href="HomePage.html" class="nav-link">Logout</a>
     </nav>
   </div>
 </header>
 
-<!-- ====== PAGE CONTENT ====== -->
 <main class="container my-recipes-page">
 
   <h1 class="page-title">My Recipes</h1>
 
-  <div class="add-recipe-link">
-    <a href="add-recipe.html" class="btn">+ Add New Recipe</a>
+  <!-- summary -->
+  <div class="recipes-summary">
+    <div class="summary-card">
+      <h3>Total Recipes</h3>
+      <p>6</p>
+    </div>
+    <div class="summary-card">
+      <h3>Most Popular</h3>
+      <p>Luqimat</p>
+    </div>
   </div>
 
-  <table class="table my-recipes-table">
+  <table class="table">
     <thead>
       <tr>
         <th>Recipe</th>
-        <th>Ingredients</th>
-        <th>Instructions</th>
-        <th>Video</th>
+        <th>Category</th>
         <th>Likes</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -51,73 +54,36 @@
 
     <tbody>
       <tr>
-        <td>
-          <a href="view-recipe.html">
-            <img src="image/sample-recipe.jpg" alt="recipe" class="recipe-thumb">
-            <span>Healthy Chicken Soup</span>
-          </a>
-        </td>
-
-        <td>
-          <ul>
-            <li>Chicken – 500g</li>
-            <li>Onion – 1</li>
-            <li>Garlic – 2 cloves</li>
-          </ul>
-        </td>
-
-        <td>
-          <ol>
-            <li>Boil chicken</li>
-            <li>Add vegetables</li>
-            <li>Simmer 30 mins</li>
-          </ol>
-        </td>
-
-        <td>No video for recipe</td>
-
-        <td>25</td>
-
-        <td>
-          <a href="edit-recipe.html" class="link">Edit</a>
-        </td>
-
-        <td>
-          <a href="#" class="link delete-link">Delete</a>
-        </td>
+        <td>Sambosa</td>
+        <td>Appetizer</td>
+        <td>45</td>
+        <td><a href="edit-recipe.html" class="link">Edit</a></td>
+        <td><a href="#" class="link delete-link">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Chicken Kabsa</td>
+        <td>Main Dish</td>
+        <td>60</td>
+        <td><a href="#" class="link">Edit</a></td>
+        <td><a href="#" class="link delete-link">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Luqimat</td>
+        <td>Dessert</td>
+        <td>80</td>
+        <td><a href="#" class="link">Edit</a></td>
+        <td><a href="#" class="link delete-link">Delete</a></td>
       </tr>
     </tbody>
   </table>
 
 </main>
 
-<!-- ====== FOOTER ====== -->
 <footer class="site-footer">
   <div class="container footer-row">
-    <p class="footer-text">© 2026 Ramadan Delights. All rights reserved.</p>
-
-    <div class="footer-icons">
-      <a href="#"><img src="image/email.png" alt="email"></a>
-      <a href="#"><img src="image/instagram.png" alt="instagram"></a>
-      <a href="#"><img src="image/twitter.png" alt="twitter"></a>
-      <a href="#"><img src="image/phone-call.png" alt="phone"></a>
-      <a href="#"><img src="image/whatsapp.png" alt="whatsapp"></a>
-      <a href="#"><img src="image/facebook.png" alt="facebook"></a>
-    </div>
+    <p class="footer-text">© 2026 Ramadan Delights</p>
   </div>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
-<div class="recipes-summary">
-  <div class="summary-card">
-    <h3>Total Recipes</h3>
-    <p>5</p>
-  </div>
-
-  <div class="summary-card">
-    <h3>Most Liked</h3>
-    <p>Chicken Soup</p>
-  </div>
-</div>
