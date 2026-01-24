@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Recipes</title>
+  <title>My Recipes | Ramadan Delights</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="page-layout">
 
-<!-- ====== HEADER  ====== -->
 <header class="site-header">
   <div class="container header-row">
     <a class="brand" href="HomePage.html">
@@ -25,12 +23,10 @@
   </div>
 </header>
 
-<!-- ====== PAGE CONTENT ====== -->
 <main class="container my-recipes-page">
 
   <h1 class="page-title">My Recipes</h1>
 
-  <!-- Summary Cards -->
   <div class="recipes-summary">
     <div class="summary-card">
       <h3>Total Recipes</h3>
@@ -42,119 +38,76 @@
     </div>
   </div>
 
-  <!-- Add New Recipe Link -->
   <div class="add-recipe-link">
     <a href="add-recipe.html" class="btn">+ Add New Recipe</a>
   </div>
 
-  <!-- Recipes Table -->
   <table class="table">
     <thead>
       <tr>
         <th>Recipe</th>
-        <th>Ingredients</th>
-        <th>Instructions</th>
-        <th>Video</th>
+        <th>Category</th>
         <th>Likes</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
     </thead>
-
     <tbody>
       <tr>
         <td>
-          <a href="view-recipe.html" class="link">
-            <img src="image/sambosa.jpg" class="recipe-thumb">
-            Sambosa
+          <a href="view-recipe.html">
+            <img src="image/sambosa.jpg" class="recipe-thumb" alt="Sambosa">
+            <span>Sambosa</span>
           </a>
         </td>
-        <td>
-          <ul>
-            <li>Dough – 10 pcs</li>
-            <li>Cheese – 200g</li>
-            <li>Oil – for frying</li>
-          </ul>
-        </td>
-        <td>
-          <ol>
-            <li>Fill dough with cheese</li>
-            <li>Fold tightly</li>
-            <li>Fry until golden</li>
-          </ol>
-        </td>
-        <td>No video for recipe</td>
+        <td>Appetizer</td>
         <td>45</td>
         <td><a href="edit-recipe.html" class="link">Edit</a></td>
-        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
+        <td><a href="#" class="link delete-link">Delete</a></td>
       </tr>
-
       <tr>
         <td>
-          <a href="view-recipe.html" class="link">
-            <img src="image/kabsa.jpg" class="recipe-thumb">
-            Chicken Kabsa
+          <a href="view-recipe.html">
+            <img src="image/kabsa.jpg" class="recipe-thumb" alt="Chicken Kabsa">
+            <span>Chicken Kabsa</span>
           </a>
         </td>
-        <td>
-          <ul>
-            <li>Rice – 2 cups</li>
-            <li>Chicken – 1 kg</li>
-            <li>Spices – Kabsa mix</li>
-          </ul>
-        </td>
-        <td>
-          <ol>
-            <li>Cook chicken with spices</li>
-            <li>Add rice</li>
-            <li>Simmer until done</li>
-          </ol>
-        </td>
-        <td>
-          <a href="#" class="link">Watch Video</a>
-        </td>
+        <td>Main Dish</td>
         <td>60</td>
         <td><a href="edit-recipe.html" class="link">Edit</a></td>
-        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
+        <td><a href="#" class="link delete-link">Delete</a></td>
       </tr>
-
       <tr>
         <td>
-          <a href="view-recipe.html" class="link">
-            <img src="image/luqimat.jpg" class="recipe-thumb">
-            Luqimat
+          <a href="view-recipe.html">
+            <img src="image/luqimat.jpg" class="recipe-thumb" alt="Luqimat">
+            <span>Luqimat</span>
           </a>
         </td>
-        <td>
-          <ul>
-            <li>Flour – 2 cups</li>
-            <li>Yeast – 1 tsp</li>
-            <li>Syrup – for serving</li>
-          </ul>
-        </td>
-        <td>
-          <ol>
-            <li>Mix ingredients</li>
-            <li>Fry spoonfuls</li>
-            <li>Drizzle syrup</li>
-          </ol>
-        </td>
-        <td>No video for recipe</td>
+        <td>Dessert</td>
         <td>80</td>
         <td><a href="edit-recipe.html" class="link">Edit</a></td>
-        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
+        <td><a href="#" class="link delete-link">Delete</a></td>
       </tr>
     </tbody>
   </table>
 
 </main>
 
-<!-- ====== FOOTER ====== -->
 <footer class="site-footer">
   <div class="container footer-row">
     <p class="footer-text">© 2026 Ramadan Delights</p>
+    <div class="footer-icons">
+      <a href="#"><img src="image/email.png" alt="email"></a>
+      <a href="#"><img src="image/instagram.png" alt="instagram"></a>
+      <a href="#"><img src="image/twitter.png" alt="twitter"></a>
+      <a href="#"><img src="image/phone-call.png" alt="phone"></a>
+      <a href="#"><img src="image/whatsapp.png" alt="whatsapp"></a>
+      <a href="#"><img src="image/facebook.png" alt="facebook"></a>
+    </div>
   </div>
 </footer>
 
+<script src="recipes.js"></script>
 </body>
 </html>
