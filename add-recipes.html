@@ -8,6 +8,7 @@
 
 <body class="page-layout">
 
+<!-- ===== HEADER  ===== -->
 <header class="site-header">
   <div class="container header-row">
     <a class="brand" href="HomePage.html">
@@ -24,19 +25,22 @@
   </div>
 </header>
 
+<!-- ===== PAGE CONTENT (Add Recipe) ===== -->
 <main class="container add-recipe-page">
 
   <h1 class="page-title">Add New Recipe</h1>
 
   <form class="form-card">
+
     <div class="form-group">
       <label>Recipe Name</label>
-      <input type="text">
+      <input type="text" class="input-field" placeholder="Enter recipe name">
     </div>
 
     <div class="form-group">
       <label>Category</label>
-      <select>
+      <select class="input-field">
+        <option selected disabled>Select category</option>
         <option>Main Dish</option>
         <option>Appetizer</option>
         <option>Dessert</option>
@@ -45,19 +49,26 @@
 
     <div class="form-group">
       <label>Ingredients</label>
-      <textarea rows="4"></textarea>
+      <textarea rows="5" class="input-field" placeholder="List ingredients separated by commas"></textarea>
     </div>
 
     <div class="form-group">
-      <label>Steps</label>
-      <textarea rows="4"></textarea>
+      <label>Steps / Instructions</label>
+      <textarea rows="5" class="input-field" placeholder="Write the cooking steps here"></textarea>
     </div>
 
-    <button class="btn-main">Add Recipe</button>
+    <div class="form-group">
+      <label>Recipe Image URL</label>
+      <input type="text" class="input-field" placeholder="image/recipe.jpg">
+    </div>
+
+    <button class="btn">Add Recipe</button>
+
   </form>
 
 </main>
 
+<!-- ===== FOOTER  ===== -->
 <footer class="site-footer">
   <div class="container footer-row">
     <p class="footer-text">© 2026 Ramadan Delights</p>
