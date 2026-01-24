@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Recipes | Ramadan Delights</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-layout">
 
+<!-- ====== HEADER ====== -->
 <header class="site-header">
   <div class="container header-row">
     <a class="brand" href="HomePage.html">
-      <img src="image/RamadanLogo.png" class="logo">
+      <img src="image/RamadanLogo.png" class="logo" alt="Logo">
       <span class="brand-name">Ramadan Delights</span>
     </a>
 
@@ -23,6 +25,7 @@
   </div>
 </header>
 
+<!-- ====== MAIN CONTENT ====== -->
 <main class="container my-recipes-page">
 
   <h1 class="page-title">My Recipes</h1>
@@ -30,7 +33,7 @@
   <div class="recipes-summary">
     <div class="summary-card">
       <h3>Total Recipes</h3>
-      <p>6</p>
+      <p>4</p>
     </div>
     <div class="summary-card">
       <h3>Most Popular</h3>
@@ -42,49 +45,128 @@
     <a href="add-recipe.html" class="btn">+ Add New Recipe</a>
   </div>
 
-  <table class="table">
+  <table class="table my-recipes-table">
     <thead>
       <tr>
         <th>Recipe</th>
         <th>Category</th>
+        <th>Ingredients</th>
+        <th>Instructions</th>
+        <th>Video</th>
         <th>Likes</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
     </thead>
     <tbody>
+      <!-- Sambosa -->
       <tr>
         <td>
           <a href="view-recipe.html">
-            <img src="image/sambosa.jpg" class="recipe-thumb" alt="Sambosa">
-            <span>Sambosa</span>
+            <img src="image/sambosa.png" class="recipe-thumb" alt="Sambosa">
+            Sambosa
           </a>
         </td>
         <td>Appetizer</td>
+        <td>
+          <ul>
+            <li>Flour – 200g</li>
+            <li>Potato – 150g</li>
+            <li>Spices – 1 tsp</li>
+          </ul>
+        </td>
+        <td>
+          <ol>
+            <li>Mix dough</li>
+            <li>Prepare filling</li>
+            <li>Fry until golden</li>
+          </ol>
+        </td>
+        <td>No video for recipe</td>
         <td>45</td>
         <td><a href="edit-recipe.html" class="link">Edit</a></td>
         <td><a href="#" class="link delete-link">Delete</a></td>
       </tr>
+
+      <!-- Potato Plate -->
       <tr>
         <td>
           <a href="view-recipe.html">
-            <img src="image/kabsa.jpg" class="recipe-thumb" alt="Chicken Kabsa">
-            <span>Chicken Kabsa</span>
+            <img src="image/PotatoPlate.png" class="recipe-thumb" alt="Potato Plate">
+            Potato Plate
           </a>
         </td>
-        <td>Main Dish</td>
-        <td>60</td>
+        <td>Side Dish</td>
+        <td>
+          <ul>
+            <li>Potatoes – 300g</li>
+            <li>Salt – 1 tsp</li>
+            <li>Olive oil – 2 tbsp</li>
+          </ul>
+        </td>
+        <td>
+          <ol>
+            <li>Slice potatoes</li>
+            <li>Bake or fry until crisp</li>
+          </ol>
+        </td>
+        <td>No video for recipe</td>
+        <td>30</td>
         <td><a href="edit-recipe.html" class="link">Edit</a></td>
         <td><a href="#" class="link delete-link">Delete</a></td>
       </tr>
+
+      <!-- Bee Dessert -->
       <tr>
         <td>
           <a href="view-recipe.html">
-            <img src="image/luqimat.jpg" class="recipe-thumb" alt="Luqimat">
-            <span>Luqimat</span>
+            <img src="image/BeeDesset.png" class="recipe-thumb" alt="Bee Dessert">
+            Bee Dessert
           </a>
         </td>
         <td>Dessert</td>
+        <td>
+          <ul>
+            <li>Honey – 100g</li>
+            <li>Almonds – 50g</li>
+            <li>Sugar – 2 tbsp</li>
+          </ul>
+        </td>
+        <td>
+          <ol>
+            <li>Mix ingredients</li>
+            <li>Bake for 15 mins</li>
+          </ol>
+        </td>
+        <td><a href="https://www.youtube.com/watch?v=abcd1234" target="_blank" class="btn">Watch Video</a></td>
+        <td>50</td>
+        <td><a href="edit-recipe.html" class="link">Edit</a></td>
+        <td><a href="#" class="link delete-link">Delete</a></td>
+      </tr>
+
+      <!-- Luqimat -->
+      <tr>
+        <td>
+          <a href="view-recipe.html">
+            <img src="image/luqimat.png" class="recipe-thumb" alt="Luqimat">
+            Luqimat
+          </a>
+        </td>
+        <td>Dessert</td>
+        <td>
+          <ul>
+            <li>Flour – 250g</li>
+            <li>Yeast – 5g</li>
+            <li>Sugar – 2 tbsp</li>
+          </ul>
+        </td>
+        <td>
+          <ol>
+            <li>Mix dough</li>
+            <li>Fry small balls until golden</li>
+          </ol>
+        </td>
+        <td>No video for recipe</td>
         <td>80</td>
         <td><a href="edit-recipe.html" class="link">Edit</a></td>
         <td><a href="#" class="link delete-link">Delete</a></td>
@@ -94,20 +176,20 @@
 
 </main>
 
+<!-- ====== FOOTER ====== -->
 <footer class="site-footer">
   <div class="container footer-row">
     <p class="footer-text">© 2026 Ramadan Delights</p>
     <div class="footer-icons">
-      <a href="#"><img src="image/email.png" alt="email"></a>
-      <a href="#"><img src="image/instagram.png" alt="instagram"></a>
-      <a href="#"><img src="image/twitter.png" alt="twitter"></a>
-      <a href="#"><img src="image/phone-call.png" alt="phone"></a>
-      <a href="#"><img src="image/whatsapp.png" alt="whatsapp"></a>
-      <a href="#"><img src="image/facebook.png" alt="facebook"></a>
+      <a href="#"><img src="image/email.png" alt="Email"></a>
+      <a href="#"><img src="image/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="image/phone-call.png" alt="Phone"></a>
+      <a href="#"><img src="image/whatsapp.png" alt="WhatsApp"></a>
+      <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
     </div>
   </div>
 </footer>
 
-<script src="recipes.js"></script>
 </body>
 </html>
