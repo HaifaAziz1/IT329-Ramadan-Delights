@@ -6,29 +6,41 @@
 }
 
 *{ box-sizing: border-box; }
+
+html, body{
+  height: 100%;
+}
+
 body{
   margin: 0;
   font-family: Arial, sans-serif;
   background: var(--light);
   color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
 }
 
 .container{
-  width: min(1000px, 92%);
+  width: min(1100px, 92%);
   margin: 0 auto;
 }
 
 /* ===== HEADER ===== */
 .site-header{
   background: var(--main);
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 .header-row{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 14px;
 }
 
 .brand{
@@ -40,8 +52,8 @@ body{
 }
 
 .logo{
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--light);
   padding: 4px;
@@ -62,13 +74,13 @@ body{
 .nav-link{
   color: var(--white);
   text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
   font-size: 14px;
 }
 
 .nav-link:hover{
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.18);
 }
 
 .nav-btn{
@@ -85,7 +97,7 @@ body{
 .site-footer{
   background: var(--main);
   color: var(--white);
-  padding: 14px 0;
+  padding: 16px 0;
   margin-top: 40px;
 }
 
@@ -93,7 +105,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer-text{
@@ -103,7 +115,7 @@ body{
 
 .footer-icons{
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer-icons img{
@@ -123,24 +135,26 @@ body{
     flex-wrap: wrap;
   }
 }
+
 /* ========================= */
 /* My Recipes Page - S */
 /* ========================= */
 
 .page-title{
-  margin: 30px 0 15px;
+  margin: 28px 0 14px;
+  font-size: 26px;
 }
 
 .add-recipe-link{
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .btn{
   display: inline-block;
   background: var(--main);
   color: var(--white);
-  padding: 8px 14px;
-  border-radius: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
   text-decoration: none;
   font-size: 14px;
 }
@@ -153,27 +167,30 @@ body{
   width: 100%;
   border-collapse: collapse;
   background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .table th,
 .table td{
-  border: 1px solid #ddd;
-  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 14px;
   vertical-align: top;
   font-size: 14px;
 }
 
 .table th{
-  background: #f3f5eb;
+  background: #f4f7ed;
+  text-align: left;
 }
 
 .recipe-thumb{
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .link{
@@ -189,64 +206,46 @@ body{
 .delete-link{
   color: #b00020;
 }
-html, body{
-  height: 100%;
-}
 
-body{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main{
-  flex: 1;
-}
 /* ========================= */
 /* My Recipes – UI Enhancements */
 /* ========================= */
 
 .my-recipes-page .page-title{
-  margin-top: 25px;
-  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 12px;
 }
 
 .my-recipes-page .recipes-summary{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .my-recipes-page .summary-card{
   background: var(--white);
-  padding: 14px;
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
 }
 
 .my-recipes-page .summary-card h3{
   margin: 0;
   font-size: 13px;
-  color: #666;
+  color: #777;
 }
 
 .my-recipes-page .summary-card p{
-  margin: 6px 0 0;
-  font-size: 20px;
+  margin: 8px 0 0;
+  font-size: 22px;
   font-weight: bold;
   color: var(--main);
 }
 
-
 .my-recipes-page .table td{
-  line-height: 1.4;
+  line-height: 1.5;
 }
-
-.my-recipes-page .recipe-thumb{
-  margin-bottom: 6px;
-}
-
 
 /* ========================= */
 /* Add Recipe – Form Styling */
@@ -254,28 +253,28 @@ main{
 
 .add-recipe-page form{
   background: var(--white);
-  padding: 22px;
-  border-radius: 16px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-  max-width: 750px;
-  margin: 0 auto;
+  padding: 26px;
+  border-radius: 20px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  max-width: 780px;
+  margin: 30px auto;
 }
 
 .add-recipe-page .form-group{
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .add-recipe-page label{
   display: block;
   font-weight: bold;
   font-size: 14px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .add-recipe-page .input-field{
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
   border: 1px solid #ccc;
   font-size: 14px;
 }
@@ -286,10 +285,10 @@ main{
 }
 
 .add-recipe-page #preview-image{
-  margin-top: 10px;
-  width: 130px;
-  height: 130px;
-  border-radius: 14px;
+  margin-top: 12px;
+  width: 140px;
+  height: 140px;
+  border-radius: 18px;
   object-fit: cover;
   border: 1px dashed #ccc;
 }
