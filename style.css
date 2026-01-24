@@ -202,4 +202,96 @@ body{
 main{
   flex: 1;
 }
+/* ========================= */
+/* My Recipes – UI Enhancements */
+/* ========================= */
+
+.my-recipes-page .page-title{
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.my-recipes-page .recipes-summary{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.my-recipes-page .summary-card{
+  background: var(--white);
+  padding: 14px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.my-recipes-page .summary-card h3{
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.my-recipes-page .summary-card p{
+  margin: 6px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--main);
+}
+
+
+.my-recipes-page .table td{
+  line-height: 1.4;
+}
+
+.my-recipes-page .recipe-thumb{
+  margin-bottom: 6px;
+}
+
+
+/* ========================= */
+/* Add Recipe – Form Styling */
+/* ========================= */
+
+.add-recipe-page form{
+  background: var(--white);
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.add-recipe-page .form-group{
+  margin-bottom: 18px;
+}
+
+.add-recipe-page label{
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.add-recipe-page .input-field{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.add-recipe-page .input-field:focus{
+  outline: none;
+  border-color: var(--main);
+}
+
+.add-recipe-page #preview-image{
+  margin-top: 10px;
+  width: 130px;
+  height: 130px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px dashed #ccc;
+}
+
 /* ======== s pages ============ */
