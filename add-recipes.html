@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add Recipe | Ramadan Delights</title>
-  <p style="color:#666; margin-bottom:20px;"> Share your favorite Ramadan recipe🌙 </p>
-
+  <title>Add Recipe</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<!-- ====== HEADER ====== -->
+<body class="page-layout">
+
 <header class="site-header">
   <div class="container header-row">
     <a class="brand" href="HomePage.html">
-      <img src="image/RamadanLogo.png" alt="Ramadan Delights Logo" class="logo">
+      <img src="image/RamadanLogo.png" class="logo">
       <span class="brand-name">Ramadan Delights</span>
     </a>
 
@@ -31,60 +28,41 @@
 
   <h1 class="page-title">Add New Recipe</h1>
 
-  <form id="add-recipe-form">
-
-    <!-- Recipe Title -->
+  <form class="form-card">
     <div class="form-group">
-      <label for="title">Recipe Title</label>
-      <input type="text" name="title" id="title" class="input-field" placeholder="Recipe Name">
+      <label>Recipe Name</label>
+      <input type="text">
     </div>
 
-    <!-- Recipe Image -->
     <div class="form-group">
-      <label for="recipe-image">Recipe Image</label>
-      <input type="file" id="recipe-image" accept="image/*">
-      <img id="preview-image" src="image/default-recipe.jpg" alt="Preview" class="recipe-thumb">
+      <label>Category</label>
+      <select>
+        <option>Main Dish</option>
+        <option>Appetizer</option>
+        <option>Dessert</option>
+      </select>
     </div>
 
-    <!-- Ingredients -->
     <div class="form-group">
       <label>Ingredients</label>
-      <div id="ingredients-container">
-        <input type="text" name="ingredients[]" placeholder="Ingredient" class="input-field">
-      </div>
-      <button type="button" id="add-ingredient-btn" class="btn">+ Add Another Ingredient</button>
+      <textarea rows="4"></textarea>
     </div>
 
-    <!-- Steps / Instructions -->
     <div class="form-group">
-      <label>Instructions</label>
-      <div id="steps-container">
-        <input type="text" name="steps[]" placeholder="Step" class="input-field">
-      </div>
-      <button type="button" id="add-step-btn" class="btn">+ Add Another Step</button>
+      <label>Steps</label>
+      <textarea rows="4"></textarea>
     </div>
 
-    <button type="submit" class="btn">Submit Recipe</button>
-
+    <button class="btn-main">Add Recipe</button>
   </form>
 
 </main>
 
-<!-- ====== FOOTER ====== -->
 <footer class="site-footer">
   <div class="container footer-row">
-    <p class="footer-text">© 2026 Ramadan Delights. All rights reserved.</p>
-    <div class="footer-icons">
-      <a href="#"><img src="image/email.png" alt="email"></a>
-      <a href="#"><img src="image/instagram.png" alt="instagram"></a>
-      <a href="#"><img src="image/twitter.png" alt="twitter"></a>
-      <a href="#"><img src="image/phone-call.png" alt="phone"></a>
-      <a href="#"><img src="image/whatsapp.png" alt="whatsapp"></a>
-      <a href="#"><img src="image/facebook.png" alt="facebook"></a>
-    </div>
+    <p class="footer-text">© 2026 Ramadan Delights</p>
   </div>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
