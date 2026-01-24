@@ -2,41 +2,11 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // === Add Ingredient dynamically ===
-  const addIngredientBtn = document.getElementById("add-ingredient-btn");
-  const ingredientsContainer = document.getElementById("ingredients-container");
-
-  if(addIngredientBtn){
-    addIngredientBtn.addEventListener("click", () => {
-      const input = document.createElement("input");
-      input.type = "text";
-      input.name = "ingredients[]";
-      input.placeholder = "Ingredient";
-      input.classList.add("input-field");
-      ingredientsContainer.appendChild(input);
-    });
-  }
-
-  // === Add Step dynamically ===
-  const addStepBtn = document.getElementById("add-step-btn");
-  const stepsContainer = document.getElementById("steps-container");
-
-  if(addStepBtn){
-    addStepBtn.addEventListener("click", () => {
-      const input = document.createElement("input");
-      input.type = "text";
-      input.name = "steps[]";
-      input.placeholder = "Step";
-      input.classList.add("input-field");
-      stepsContainer.appendChild(input);
-    });
-  }
-
   // === Image Preview ===
   const recipeImage = document.getElementById("recipe-image");
   const previewImage = document.getElementById("preview-image");
 
-  if(recipeImage){
+  if(recipeImage && previewImage){
     recipeImage.addEventListener("change", (e) => {
       const file = e.target.files[0];
       if(file){
@@ -51,15 +21,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // === Simple UI Validation ===
-  const addRecipeForm = document.getElementById("add-recipe-form");
+  // === Simple Form Validation & Notification ===
+  const addRecipeForm = document.querySelector(".form-card");
   if(addRecipeForm){
     addRecipeForm.addEventListener("submit", (e) => {
-      const title = addRecipeForm.querySelector('input[name="title"]').value.trim();
-      if(title === ""){
-        e.preventDefault();
-        alert("Recipe title cannot be empty!");
+      e.preventDefault(); // منع الريلود للعرض التجريبي
+
+      const title = addRecipeForm.querySelector('input[type="text"]').value.trim();
+      const category = addRecipeForm.querySelector('select').value;
+      const ingredients = addRecipeForm.querySelector('textarea[name="ingredients"]') || addRecipeForm.querySelectorAll('textarea')[0];
+      
+      if(title === "" || category === "Select category" || ingredients.value.trim() === ""){
+        alert("Please fill in all required fields!");
+        return;
       }
+
+      // === Notification Success ===
+      alert(`Recipe "${title}" added successfully!`);
+      // === بعدين ممكن هنا نضيف redirect للـ My Recipes page ===
+      // window.location.href = "my-recipes.html";
     });
   }
 
