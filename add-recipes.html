@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Recipe | Ramadan Delights</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-layout">
 
+<!-- ====== HEADER ====== -->
 <header class="site-header">
   <div class="container header-row">
     <a class="brand" href="HomePage.html">
-      <img src="image/RamadanLogo.png" class="logo">
+      <img src="image/RamadanLogo.png" class="logo" alt="Logo">
       <span class="brand-name">Ramadan Delights</span>
     </a>
 
@@ -23,60 +25,100 @@
   </div>
 </header>
 
+<!-- ====== MAIN CONTENT ====== -->
 <main class="container add-recipe-page">
-
   <h1 class="page-title">Add New Recipe</h1>
 
-  <form id="add-recipe-form" class="form-card">
-
+  <form id="add-recipe-form">
+    
     <div class="form-group">
-      <label for="title">Recipe Name</label>
-      <input type="text" id="title" name="title" class="input-field" placeholder="Enter recipe name">
+      <label for="recipe-title">Recipe Name</label>
+      <input type="text" id="recipe-title" name="title" class="input-field" placeholder="Enter recipe name" required>
     </div>
 
     <div class="form-group">
-      <label for="category">Category</label>
-      <select id="category" class="input-field">
-        <option>Main Dish</option>
-        <option>Appetizer</option>
-        <option>Dessert</option>
+      <label for="recipe-category">Category</label>
+      <select id="recipe-category" name="category" class="input-field" required>
+        <option value="">--Select Category--</option>
+        <option value="Appetizer">Appetizer</option>
+        <option value="Main Dish">Main Dish</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Side Dish">Side Dish</option>
       </select>
     </div>
 
     <div class="form-group">
-      <label for="ingredients-container">Ingredients</label>
+      <label>Ingredients</label>
       <div id="ingredients-container">
-        <input type="text" name="ingredients[]" placeholder="Ingredient" class="input-field">
+        <input type="text" name="ingredients[]" class="input-field" placeholder="Ingredient" required>
       </div>
-      <button type="button" id="add-ingredient-btn" class="btn">+ Add Another Ingredient</button>
+      <button type="button" id="add-ingredient-btn" class="btn">+ Add Ingredient</button>
+    </div>
+
+    <div class="form-group">
+      <label>Instructions</label>
+      <textarea name="instructions" class="input-field" placeholder="Describe preparation steps" rows="4" required></textarea>
     </div>
 
     <div class="form-group">
       <label for="recipe-image">Recipe Image</label>
-      <input type="file" id="recipe-image" accept="image/*">
-      <img id="preview-image" src="image/default-recipe.jpg" alt="Preview" class="recipe-thumb">
+      <input type="file" id="recipe-image" accept="image/*" class="input-field">
+      <img id="preview-image" src="image/default-recipe.jpg" alt="Recipe Preview">
+    </div>
+
+    <div class="form-group">
+      <label for="recipe-video">Video / YouTube Link (optional)</label>
+      <input type="url" id="recipe-video" name="video" class="input-field" placeholder="https://">
     </div>
 
     <button type="submit" class="btn">Add Recipe</button>
-
   </form>
 
 </main>
 
+<!-- ====== FOOTER ====== -->
 <footer class="site-footer">
   <div class="container footer-row">
     <p class="footer-text">© 2026 Ramadan Delights</p>
     <div class="footer-icons">
-      <a href="#"><img src="image/email.png" alt="email"></a>
-      <a href="#"><img src="image/instagram.png" alt="instagram"></a>
-      <a href="#"><img src="image/twitter.png" alt="twitter"></a>
-      <a href="#"><img src="image/phone-call.png" alt="phone"></a>
-      <a href="#"><img src="image/whatsapp.png" alt="whatsapp"></a>
-      <a href="#"><img src="image/facebook.png" alt="facebook"></a>
+      <a href="#"><img src="image/email.png" alt="Email"></a>
+      <a href="#"><img src="image/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="image/phone-call.png" alt="Phone"></a>
+      <a href="#"><img src="image/whatsapp.png" alt="WhatsApp"></a>
+      <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
     </div>
   </div>
 </footer>
 
+<!-- ====== JS FOR ADD RECIPE PAGE ====== -->
 <script src="recipes.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const addRecipeForm = document.getElementById("add-recipe-form");
+  const previewImage = document.getElementById("preview-image");
+  const recipeImage = document.getElementById("recipe-image");
+
+  // Image Preview
+  recipeImage.addEventListener("change", e => {
+    const file = e.target.files[0];
+    if(file){
+      const reader = new FileReader();
+      reader.onload = () => previewImage.src = reader.result;
+      reader.readAsDataURL(file);
+    } else {
+      previewImage.src = "image/default-recipe.jpg";
+    }
+  });
+
+  // Form submit simulation
+  addRecipeForm.addEventListener("submit", e => {
+    e.preventDefault();
+    alert("Recipe added successfully!");
+    window.location.href = "my-recipes.html";
+  });
+});
+</script>
+
 </body>
 </html>
