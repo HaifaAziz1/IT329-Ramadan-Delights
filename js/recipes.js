@@ -78,3 +78,47 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+// ===============================
+// User Page JS (Dashboard)
+// ===============================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ===== Filter Recipes =====
+  const filterBtn = document.getElementById("filterBtn");
+  const categoryFilter = document.getElementById("categoryFilter");
+
+  if (filterBtn && categoryFilter) {
+    filterBtn.addEventListener("click", function () {
+      const selectedCategory = categoryFilter.value.toLowerCase();
+      const rows = document.querySelectorAll(".table tr");
+
+      rows.forEach((row, index) => {
+        if (index === 0) return; // skip header row
+
+        const categoryCell = row.cells[4]; // عمود Category
+        if (!categoryCell) return;
+
+        const categoryText = categoryCell.textContent.toLowerCase();
+
+        if (selectedCategory === "all" || categoryText === selectedCategory) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+
+      alert("Filter applied ✅");
+    });
+  }
+
+});
+
+
+// ===== Remove Favourite Recipe =====
+function removeFav() {
+  alert("Recipe removed from favourites ❤️");
+
+  // حذف السطر من الجدول
+  event.target.closest("tr").remove();
+}
