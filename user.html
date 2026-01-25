@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - Ramadan Delights</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<!-- ====== HEADER ====== -->
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="HomePage.html">
+      <img src="image/RamadanLogo.png" alt="Ramadan Delights Logo" class="logo">
+      <span class="brand-name">Ramadan Delights</span>
+    </a>
+
+    <nav class="nav">
+      <a href="user.html" class="nav-link">Dashboard</a>
+      <a href="my-recipes.html" class="nav-link">My Recipes</a>
+      <a href="HomePage.html" class="nav-link nav-btn">Sign Out</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ====== MAIN CONTENT ====== -->
+<main class="container">
+
+  <section class="user-dashboard">
+
+    <!-- Welcome -->
+    <h2>Welcome, Nourah 👋</h2>
+
+    <!-- User Info -->
+    <div class="user-info-box">
+      <img src="image/default-user.png" alt="User Photo" class="profile-pic">
+
+      <div class="user-details">
+        <p><strong>First Name:</strong> Nourah</p>
+        <p><strong>Last Name:</strong> Almousa</p>
+        <p><strong>Email:</strong> nourah@email.com</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="user-stats">
+      <a href="my-recipes.html" class="btn">My Recipes</a>
+
+      <p>Total Recipes: <strong>4</strong></p>
+      <p>Total Likes: <strong>21</strong></p>
+    </div>
+
+    <!-- All Recipes -->
+    <h3>All Recipes</h3>
+
+    <div class="filter-box">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="iftar">Iftar</option>
+        <option value="dessert">Dessert</option>
+        <option value="drink">Drinks</option>
+      </select>
+
+      <button id="filterBtn" class="btn">Filter</button>
+    </div>
+
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Creator</th>
+        <th>Likes</th>
+        <th>Category</th>
+      </tr>
+
+      <tr>
+        <td><a href="view-recipe.html">Samosa</a></td>
+        <td><img src="image/samosa.jpg" class="recipe-img"></td>
+        <td>
+          <img src="image/user1.jpg" class="creator-img">
+          Sara Ali
+        </td>
+        <td>15</td>
+        <td>Iftar</td>
+      </tr>
+
+      <tr>
+        <td><a href="view-recipe.html">Kunafa</a></td>
+        <td><img src="image/kunafa.jpg" class="recipe-img"></td>
+        <td>
+          <img src="image/user2.jpg" class="creator-img">
+          Aisha Noor
+        </td>
+        <td>23</td>
+        <td>Dessert</td>
+      </tr>
+    </table>
+
+    <!-- Favourites -->
+    <h3>My Favourite Recipes</h3>
+
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Action</th>
+      </tr>
+
+      <tr>
+        <td><a href="view-recipe.html">Dates Cake</a></td>
+        <td><img src="image/dates-cake.jpg" class="recipe-img"></td>
+        <td><a href="#" onclick="removeFav()">Remove</a></td>
+      </tr>
+    </table>
+
+  </section>
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="site-footer">
+  <div class="container footer-row">
+    <p class="footer-text">© 2026 Ramadan Delights. All rights reserved.</p>
+
+    <div class="footer-icons">
+      <a href="#"><img src="image/email.png" alt="email"></a>
+      <a href="#"><img src="image/instagram.png" alt="instagram"></a>
+      <a href="#"><img src="image/twitter.png" alt="twitter"></a>
+      <a href="#"><img src="image/phone-call.png" alt="phone"></a>
+      <a href="#"><img src="image/whatsapp.png" alt="whatsapp"></a>
+      <a href="#"><img src="image/facebook.png" alt="facebook"></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ====== JS ====== -->
+<script src="script.js"></script>
+
+</body>
+</html>
