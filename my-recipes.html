@@ -6,42 +6,46 @@
   <title>My Recipes | Ramadan Delights</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="page-layout">
 
+<!-- ================= HEADER ================= -->
 <header class="site-header">
   <div class="container header-row">
-    <a class="brand" href="HomePage.html">
-      <img src="image/RamadanLogo.png" class="logo" alt="Logo">
+    <a href="HomePage.html" class="brand">
+      <img src="image/RamadanLogo.png" alt="Ramadan Delights Logo" class="logo">
       <span class="brand-name">Ramadan Delights</span>
     </a>
 
     <nav class="nav">
       <a href="user.html" class="nav-link">Dashboard</a>
-      <a href="my-recipes.html" class="nav-link nav-btn">My Recipes</a>
+      <a href="my-recipes.html" class="nav-link active">My Recipes</a>
       <a href="add-recipe.html" class="nav-link">Add Recipe</a>
       <a href="HomePage.html" class="nav-link">Logout</a>
     </nav>
   </div>
 </header>
 
+<!-- ================= MAIN ================= -->
 <main class="container my-recipes-page">
+
   <h1 class="page-title">My Recipes</h1>
 
+  <!-- summary -->
   <div class="recipes-summary">
     <div class="summary-card">
       <h3>Total Recipes</h3>
-      <p id="totalRecipes">0</p>
+      <p>4</p>
     </div>
     <div class="summary-card">
-      <h3>Most Liked</h3>
-      <p id="mostLiked">—</p>
+      <h3>Most Popular</h3>
+      <p>Luqimat</p>
     </div>
   </div>
 
-  <div class="add-recipe-link">
-    <a href="add-recipe.html" class="btn">+ Add New Recipe</a>
-  </div>
+  <a href="add-recipe.html" class="btn add-btn">+ Add New Recipe</a>
 
+  <!-- table -->
   <table class="table my-recipes-table">
     <thead>
       <tr>
@@ -54,25 +58,112 @@
         <th>Delete</th>
       </tr>
     </thead>
-    <tbody id="recipesTbody"></tbody>
+
+    <tbody>
+
+      <!-- Sambosa -->
+      <tr>
+        <td>
+          <a href="view-recipe.html">
+            <img src="image/sambosa.png" class="recipe-img" alt="Sambosa"><br>
+            Sambosa
+          </a>
+        </td>
+        <td>
+          <ul>
+            <li>Flour – 200g</li>
+            <li>Potato – 150g</li>
+            <li>Spices – 1 tsp</li>
+          </ul>
+        </td>
+        <td>
+          <ol>
+            <li>Mix dough</li>
+            <li>Prepare filling</li>
+            <li>Fry until golden</li>
+          </ol>
+        </td>
+        <td>No video for recipe</td>
+        <td>45</td>
+        <td><a href="edit-recipe.html">Edit</a></td>
+        <td><a href="my-recipes.html">Delete</a></td>
+      </tr>
+
+      <!-- Bee Dessert -->
+      <tr>
+        <td>
+          <a href="view-recipe.html">
+            <img src="image/beehive.png" class="recipe-img" alt="Bee Dessert"><br>
+            Bee Dessert
+          </a>
+        </td>
+        <td>
+          <ul>
+            <li>Honey – 100g</li>
+            <li>Almonds – 50g</li>
+            <li>Sugar – 2 tbsp</li>
+          </ul>
+        </td>
+        <td>
+          <ol>
+            <li>Mix ingredients</li>
+            <li>Bake for 15 mins</li>
+          </ol>
+        </td>
+        <td>
+          <a href="#" class="btn small-btn">Watch Video</a>
+        </td>
+        <td>50</td>
+        <td><a href="edit-recipe.html">Edit</a></td>
+        <td><a href="my-recipes.html">Delete</a></td>
+      </tr>
+
+      <!-- Luqimat -->
+      <tr>
+        <td>
+          <a href="view-recipe.html">
+            <img src="image/luqimat.png" class="recipe-img" alt="Luqimat"><br>
+            Luqimat
+          </a>
+        </td>
+        <td>
+          <ul>
+            <li>Flour – 250g</li>
+            <li>Yeast – 5g</li>
+            <li>Sugar – 2 tbsp</li>
+          </ul>
+        </td>
+        <td>
+          <ol>
+            <li>Mix dough</li>
+            <li>Fry small balls until golden</li>
+          </ol>
+        </td>
+        <td>No video for recipe</td>
+        <td>80</td>
+        <td><a href="edit-recipe.html">Edit</a></td>
+        <td><a href="my-recipes.html">Delete</a></td>
+      </tr>
+
+    </tbody>
   </table>
+
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer class="site-footer">
   <div class="container footer-row">
-    <p class="footer-text">© 2026 Ramadan Delights</p>
+    <p>© 2026 Ramadan Delights</p>
     <div class="footer-icons">
-      <a href="#"><img src="image/email.png" alt="Email"></a>
-      <a href="#"><img src="image/instagram.png" alt="Instagram"></a>
-      <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
-      <a href="#"><img src="image/phone-call.png" alt="Phone"></a>
-      <a href="#"><img src="image/whatsapp.png" alt="WhatsApp"></a>
-      <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
+      <img src="image/email.png" alt="Email">
+      <img src="image/instagram.png" alt="Instagram">
+      <img src="image/twitter.png" alt="Twitter">
+      <img src="image/phone-call.png" alt="Phone">
+      <img src="image/whatsapp.png" alt="WhatsApp">
+      <img src="image/facebook.png" alt="Facebook">
     </div>
   </div>
 </footer>
 
-<div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
-<script src="recipes.js"></script>
 </body>
 </html>
