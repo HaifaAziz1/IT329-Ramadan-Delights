@@ -8,7 +8,6 @@
 </head>
 <body class="page-layout">
 
-<!-- ====== HEADER ====== -->
 <header class="site-header">
   <div class="container header-row">
     <a class="brand" href="HomePage.html">
@@ -25,19 +24,17 @@
   </div>
 </header>
 
-<!-- ====== MAIN CONTENT ====== -->
 <main class="container my-recipes-page">
-
   <h1 class="page-title">My Recipes</h1>
 
   <div class="recipes-summary">
     <div class="summary-card">
       <h3>Total Recipes</h3>
-      <p>4</p>
+      <p id="totalRecipes">0</p>
     </div>
     <div class="summary-card">
-      <h3>Most Popular</h3>
-      <p>Luqimat</p>
+      <h3>Most Liked</h3>
+      <p id="mostLiked">—</p>
     </div>
   </div>
 
@@ -57,132 +54,10 @@
         <th>Delete</th>
       </tr>
     </thead>
-
-    <tbody>
-      <!-- Sambosa -->
-      <tr>
-        <td>
-          <a href="view-recipe.html" class="recipe-link">
-            <img src="image/sambosa.png" class="recipe-thumb" alt="Sambosa">
-            <span class="recipe-name">Sambosa</span>
-            <span class="badge">Appetizer</span>
-          </a>
-        </td>
-        <td>
-          <ul>
-            <li>Flour – 200g</li>
-            <li>Potato – 150g</li>
-            <li>Spices – 1 tsp</li>
-          </ul>
-        </td>
-        <td>
-          <ol>
-            <li>Mix dough</li>
-            <li>Prepare filling</li>
-            <li>Fry until golden</li>
-          </ol>
-        </td>
-        <td><span class="muted">No video for recipe</span></td>
-        <td>45</td>
-        <td><a href="edit-recipe.html?recipe=sambosa" class="link">Edit</a></td>
-        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
-      </tr>
-
-      <!-- Kunafah -->
-      <tr>
-        <td>
-          <a href="view-recipe.html" class="recipe-link">
-            <img src="image/kunafah.png" class="recipe-thumb" alt="Kunafah">
-            <span class="recipe-name">Kunafah</span>
-            <span class="badge">Dessert</span>
-          </a>
-        </td>
-        <td>
-          <ul>
-            <li>Kunafa dough – 300g</li>
-            <li>Cheese – 200g</li>
-            <li>Syrup – 3 tbsp</li>
-          </ul>
-        </td>
-        <td>
-          <ol>
-            <li>Layer dough and cheese</li>
-            <li>Bake until golden</li>
-            <li>Add syrup and serve</li>
-          </ol>
-        </td>
-        <td><span class="muted">No video for recipe</span></td>
-        <td>52</td>
-        <td><a href="edit-recipe.html?recipe=kunafah" class="link">Edit</a></td>
-        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
-      </tr>
-
-      <!-- Beehive -->
-      <tr>
-        <td>
-          <a href="view-recipe.html" class="recipe-link">
-            <img src="image/beehive.png" class="recipe-thumb" alt="Beehive">
-            <span class="recipe-name">Beehive</span>
-            <span class="badge">Dessert</span>
-          </a>
-        </td>
-        <td>
-          <ul>
-            <li>Flour – 350g</li>
-            <li>Milk – 1 cup</li>
-            <li>Cheese – 150g</li>
-          </ul>
-        </td>
-        <td>
-          <ol>
-            <li>Prepare dough</li>
-            <li>Stuff with cheese</li>
-            <li>Bake and drizzle syrup</li>
-          </ol>
-        </td>
-        <td>
-          <a class="btn btn-small" href="https://example.com/video" target="_blank" rel="noopener">Watch Video</a>
-        </td>
-        <td>50</td>
-        <td><a href="edit-recipe.html?recipe=beehive" class="link">Edit</a></td>
-        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
-      </tr>
-
-      <!-- Luqimat -->
-      <tr>
-        <td>
-          <a href="view-recipe.html" class="recipe-link">
-            <img src="image/luqimat.png" class="recipe-thumb" alt="Luqimat">
-            <span class="recipe-name">Luqimat</span>
-            <span class="badge">Dessert</span>
-          </a>
-        </td>
-        <td>
-          <ul>
-            <li>Flour – 250g</li>
-            <li>Yeast – 5g</li>
-            <li>Sugar – 2 tbsp</li>
-          </ul>
-        </td>
-        <td>
-          <ol>
-            <li>Mix batter</li>
-            <li>Fry small balls</li>
-            <li>Serve with syrup</li>
-          </ol>
-        </td>
-        <td><span class="muted">No video for recipe</span></td>
-        <td>80</td>
-        <td><a href="edit-recipe.html?recipe=luqimat" class="link">Edit</a></td>
-        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
-      </tr>
-
-    </tbody>
+    <tbody id="recipesTbody"></tbody>
   </table>
-
 </main>
 
-<!-- ====== FOOTER ====== -->
 <footer class="site-footer">
   <div class="container footer-row">
     <p class="footer-text">© 2026 Ramadan Delights</p>
