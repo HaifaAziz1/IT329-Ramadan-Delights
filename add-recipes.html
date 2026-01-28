@@ -8,7 +8,6 @@
 </head>
 <body class="page-layout">
 
-<!-- ====== HEADER ====== -->
 <header class="site-header">
   <div class="container header-row">
     <a class="brand" href="HomePage.html">
@@ -25,58 +24,66 @@
   </div>
 </header>
 
-<!-- ====== MAIN CONTENT ====== -->
 <main class="container add-recipe-page">
   <h1 class="page-title">Add New Recipe</h1>
 
-  <form id="add-recipe-form">
-    
+  <form id="addRecipeForm" novalidate>
     <div class="form-group">
-      <label for="recipe-title">Recipe Name</label>
-      <input type="text" id="recipe-title" name="title" class="input-field" placeholder="Enter recipe name" required>
+      <label for="title">Recipe Name</label>
+      <input id="title" type="text" class="input-field" required>
     </div>
 
     <div class="form-group">
-      <label for="recipe-category">Category</label>
-      <select id="recipe-category" name="category" class="input-field" required>
+      <label for="category">Category</label>
+      <select id="category" class="input-field" required>
         <option value="">--Select Category--</option>
-        <option value="Appetizer">Appetizer</option>
-        <option value="Main Dish">Main Dish</option>
-        <option value="Dessert">Dessert</option>
-        <option value="Side Dish">Side Dish</option>
+        <option>Appetizer</option>
+        <option>Main Dish</option>
+        <option>Dessert</option>
+        <option>Side Dish</option>
+        <option>Drink</option>
       </select>
     </div>
 
     <div class="form-group">
-      <label>Ingredients</label>
-      <div id="ingredients-container">
-        <input type="text" name="ingredients[]" class="input-field" placeholder="Ingredient" required>
+      <label for="desc">Description</label>
+      <textarea id="desc" class="input-field" rows="3" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Ingredients (name + quantity)</label>
+      <div id="ingredientsContainer" class="stack">
+        <div class="two-cols">
+          <input type="text" class="input-field ing-name" placeholder="Ingredient name" required>
+          <input type="text" class="input-field ing-qty" placeholder="Quantity (e.g., 200g)" required>
+        </div>
       </div>
-      <button type="button" id="add-ingredient-btn" class="btn">+ Add Ingredient</button>
+      <button type="button" class="btn" id="addIngredientBtn">+ Add Ingredient</button>
     </div>
 
     <div class="form-group">
       <label>Instructions</label>
-      <textarea name="instructions" class="input-field" placeholder="Describe preparation steps" rows="4" required></textarea>
+      <div id="stepsContainer" class="stack">
+        <input type="text" class="input-field step" placeholder="Step 1" required>
+      </div>
+      <button type="button" class="btn" id="addStepBtn">+ Add Step</button>
     </div>
 
     <div class="form-group">
-      <label for="recipe-image">Recipe Image</label>
-      <input type="file" id="recipe-image" accept="image/*" class="input-field">
-      <img id="preview-image" src="image/default-recipe.jpg" alt="Recipe Preview">
+      <label for="photo">Photo (Required)</label>
+      <input id="photo" type="file" class="input-field" accept="image/*" required>
+      <img id="preview" class="preview-img" src="image/sambosa.png" alt="Preview">
     </div>
 
     <div class="form-group">
-      <label for="recipe-video">Video / YouTube Link (optional)</label>
-      <input type="url" id="recipe-video" name="video" class="input-field" placeholder="https://">
+      <label for="video">Video URL (optional)</label>
+      <input id="video" type="url" class="input-field" placeholder="https://">
     </div>
 
-    <button type="submit" class="btn">Add Recipe</button>
+    <button type="submit" class="btn">Submit Recipe</button>
   </form>
-
 </main>
 
-<!-- ====== FOOTER ====== -->
 <footer class="site-footer">
   <div class="container footer-row">
     <p class="footer-text">© 2026 Ramadan Delights</p>
@@ -91,34 +98,7 @@
   </div>
 </footer>
 
-<!-- ====== JS FOR ADD RECIPE PAGE ====== -->
+<div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
 <script src="recipes.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const addRecipeForm = document.getElementById("add-recipe-form");
-  const previewImage = document.getElementById("preview-image");
-  const recipeImage = document.getElementById("recipe-image");
-
-  // Image Preview
-  recipeImage.addEventListener("change", e => {
-    const file = e.target.files[0];
-    if(file){
-      const reader = new FileReader();
-      reader.onload = () => previewImage.src = reader.result;
-      reader.readAsDataURL(file);
-    } else {
-      previewImage.src = "image/default-recipe.jpg";
-    }
-  });
-
-  // Form submit simulation
-  addRecipeForm.addEventListener("submit", e => {
-    e.preventDefault();
-    alert("Recipe added successfully!");
-    window.location.href = "my-recipes.html";
-  });
-});
-</script>
-
 </body>
 </html>
