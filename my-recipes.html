@@ -49,7 +49,6 @@
     <thead>
       <tr>
         <th>Recipe</th>
-        <th>Category</th>
         <th>Ingredients</th>
         <th>Instructions</th>
         <th>Video</th>
@@ -58,16 +57,17 @@
         <th>Delete</th>
       </tr>
     </thead>
+
     <tbody>
       <!-- Sambosa -->
       <tr>
         <td>
-          <a href="view-recipe.html">
+          <a href="view-recipe.html" class="recipe-link">
             <img src="image/sambosa.png" class="recipe-thumb" alt="Sambosa">
-            Sambosa
+            <span class="recipe-name">Sambosa</span>
+            <span class="badge">Appetizer</span>
           </a>
         </td>
-        <td>Appetizer</td>
         <td>
           <ul>
             <li>Flour – 200g</li>
@@ -82,77 +82,81 @@
             <li>Fry until golden</li>
           </ol>
         </td>
-        <td>No video for recipe</td>
+        <td><span class="muted">No video for recipe</span></td>
         <td>45</td>
-        <td><a href="edit-recipe.html" class="link">Edit</a></td>
-        <td><a href="#" class="link delete-link">Delete</a></td>
+        <td><a href="edit-recipe.html?recipe=sambosa" class="link">Edit</a></td>
+        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
       </tr>
 
-      <!-- Potato Plate -->
+      <!-- Kunafah -->
       <tr>
         <td>
-          <a href="view-recipe.html">
-            <img src="image/PotatoPlate.png" class="recipe-thumb" alt="Potato Plate">
-            Potato Plate
+          <a href="view-recipe.html" class="recipe-link">
+            <img src="image/kunafah.png" class="recipe-thumb" alt="Kunafah">
+            <span class="recipe-name">Kunafah</span>
+            <span class="badge">Dessert</span>
           </a>
         </td>
-        <td>Side Dish</td>
         <td>
           <ul>
-            <li>Potatoes – 300g</li>
-            <li>Salt – 1 tsp</li>
-            <li>Olive oil – 2 tbsp</li>
+            <li>Kunafa dough – 300g</li>
+            <li>Cheese – 200g</li>
+            <li>Syrup – 3 tbsp</li>
           </ul>
         </td>
         <td>
           <ol>
-            <li>Slice potatoes</li>
-            <li>Bake or fry until crisp</li>
+            <li>Layer dough and cheese</li>
+            <li>Bake until golden</li>
+            <li>Add syrup and serve</li>
           </ol>
         </td>
-        <td>No video for recipe</td>
-        <td>30</td>
-        <td><a href="edit-recipe.html" class="link">Edit</a></td>
-        <td><a href="#" class="link delete-link">Delete</a></td>
+        <td><span class="muted">No video for recipe</span></td>
+        <td>52</td>
+        <td><a href="edit-recipe.html?recipe=kunafah" class="link">Edit</a></td>
+        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
       </tr>
 
-      <!-- Bee Dessert -->
+      <!-- Beehive -->
       <tr>
         <td>
-          <a href="view-recipe.html">
-            <img src="image/BeeDesset.png" class="recipe-thumb" alt="Bee Dessert">
-            Bee Dessert
+          <a href="view-recipe.html" class="recipe-link">
+            <img src="image/beehive.png" class="recipe-thumb" alt="Beehive">
+            <span class="recipe-name">Beehive</span>
+            <span class="badge">Dessert</span>
           </a>
         </td>
-        <td>Dessert</td>
         <td>
           <ul>
-            <li>Honey – 100g</li>
-            <li>Almonds – 50g</li>
-            <li>Sugar – 2 tbsp</li>
+            <li>Flour – 350g</li>
+            <li>Milk – 1 cup</li>
+            <li>Cheese – 150g</li>
           </ul>
         </td>
         <td>
           <ol>
-            <li>Mix ingredients</li>
-            <li>Bake for 15 mins</li>
+            <li>Prepare dough</li>
+            <li>Stuff with cheese</li>
+            <li>Bake and drizzle syrup</li>
           </ol>
         </td>
-        <td><a href="https://www.youtube.com/watch?v=abcd1234" target="_blank" class="btn">Watch Video</a></td>
+        <td>
+          <a class="btn btn-small" href="https://example.com/video" target="_blank" rel="noopener">Watch Video</a>
+        </td>
         <td>50</td>
-        <td><a href="edit-recipe.html" class="link">Edit</a></td>
-        <td><a href="#" class="link delete-link">Delete</a></td>
+        <td><a href="edit-recipe.html?recipe=beehive" class="link">Edit</a></td>
+        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
       </tr>
 
       <!-- Luqimat -->
       <tr>
         <td>
-          <a href="view-recipe.html">
+          <a href="view-recipe.html" class="recipe-link">
             <img src="image/luqimat.png" class="recipe-thumb" alt="Luqimat">
-            Luqimat
+            <span class="recipe-name">Luqimat</span>
+            <span class="badge">Dessert</span>
           </a>
         </td>
-        <td>Dessert</td>
         <td>
           <ul>
             <li>Flour – 250g</li>
@@ -162,15 +166,17 @@
         </td>
         <td>
           <ol>
-            <li>Mix dough</li>
-            <li>Fry small balls until golden</li>
+            <li>Mix batter</li>
+            <li>Fry small balls</li>
+            <li>Serve with syrup</li>
           </ol>
         </td>
-        <td>No video for recipe</td>
+        <td><span class="muted">No video for recipe</span></td>
         <td>80</td>
-        <td><a href="edit-recipe.html" class="link">Edit</a></td>
-        <td><a href="#" class="link delete-link">Delete</a></td>
+        <td><a href="edit-recipe.html?recipe=luqimat" class="link">Edit</a></td>
+        <td><a href="my-recipes.html" class="link delete-link">Delete</a></td>
       </tr>
+
     </tbody>
   </table>
 
@@ -191,5 +197,7 @@
   </div>
 </footer>
 
+<div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+<script src="recipes.js"></script>
 </body>
 </html>
