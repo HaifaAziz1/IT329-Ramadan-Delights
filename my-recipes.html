@@ -1,169 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Recipes | Ramadan Delights</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="page-layout">
+<body>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="container header-row">
-    <a href="HomePage.html" class="brand">
-      <img src="image/RamadanLogo.png" alt="Ramadan Delights Logo" class="logo">
-      <span class="brand-name">Ramadan Delights</span>
-    </a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="HomePage.html">
+        <img class="logo" src="image/RamadanLogo.png" alt="Ramadan Delights Logo" />
+        <span class="brand-name">Ramadan Delights</span>
+      </a>
 
-    <nav class="nav">
-      <a href="user.html" class="nav-link">Dashboard</a>
-      <a href="my-recipes.html" class="nav-link active">My Recipes</a>
-      <a href="add-recipe.html" class="nav-link">Add Recipe</a>
-      <a href="HomePage.html" class="nav-link">Logout</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ================= MAIN ================= -->
-<main class="container my-recipes-page">
-
-  <h1 class="page-title">My Recipes</h1>
-
-  <!-- summary -->
-  <div class="recipes-summary">
-    <div class="summary-card">
-      <h3>Total Recipes</h3>
-      <p>4</p>
+      <nav class="nav">
+        <a class="nav-link" href="user.html">Dashboard</a>
+        <a class="nav-link active" href="my-recipes.html">My Recipes</a>
+        <a class="nav-link" href="add-recipe.html">Add Recipe</a>
+        <a class="nav-link" href="HomePage.html">Logout</a>
+      </nav>
     </div>
-    <div class="summary-card">
-      <h3>Most Popular</h3>
-      <p>Luqimat</p>
+  </header>
+
+  <main class="container page">
+    <h1 class="page-title">My Recipes</h1>
+
+    <a class="btn" href="add-recipe.html">+ Add New Recipe</a>
+
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Recipe</th>
+            <th>Ingredients</th>
+            <th>Instructions</th>
+            <th>Video</th>
+            <th>Likes</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <a href="view-recipe.html">
+                <img class="recipe-img" src="image/sambosa.png" alt="Sambosa" />
+                <span class="recipe-name">Sambosa</span>
+              </a>
+            </td>
+            <td>
+              <ul>
+                <li>Flour – 200g</li>
+                <li>Potato – 150g</li>
+                <li>Spices – 1 tsp</li>
+              </ul>
+            </td>
+            <td>
+              <ol>
+                <li>Mix dough</li>
+                <li>Prepare filling</li>
+                <li>Fry until golden</li>
+              </ol>
+            </td>
+            <td>No video for recipe</td>
+            <td>45</td>
+            <td><a href="edit-recipe.html">Edit</a></td>
+            <td><a href="my-recipes.html">Delete</a></td>
+          </tr>
+
+          <tr>
+            <td>
+              <a href="view-recipe.html">
+                <img class="recipe-img" src="image/kunafah.png" alt="Kunafah" />
+                <span class="recipe-name">Kunafah</span>
+              </a>
+            </td>
+            <td>
+              <ul>
+                <li>Kataifi – 300g</li>
+                <li>Cheese – 200g</li>
+                <li>Syrup – 1 cup</li>
+              </ul>
+            </td>
+            <td>
+              <ol>
+                <li>Layer kataifi and cheese</li>
+                <li>Bake until golden</li>
+                <li>Pour syrup and serve</li>
+              </ol>
+            </td>
+            <td>
+              <a class="video-link" href="https://www.youtube.com/" target="_blank" rel="noopener">Watch Video</a>
+            </td>
+            <td>62</td>
+            <td><a href="edit-recipe.html">Edit</a></td>
+            <td><a href="my-recipes.html">Delete</a></td>
+          </tr>
+
+          <tr>
+            <td>
+              <a href="view-recipe.html">
+                <img class="recipe-img" src="image/luqimat.png" alt="Luqimat" />
+                <span class="recipe-name">Luqimat</span>
+              </a>
+            </td>
+            <td>
+              <ul>
+                <li>Flour – 250g</li>
+                <li>Yeast – 5g</li>
+                <li>Sugar – 2 tbsp</li>
+              </ul>
+            </td>
+            <td>
+              <ol>
+                <li>Mix batter</li>
+                <li>Rest for 30 minutes</li>
+                <li>Fry and drizzle syrup</li>
+              </ol>
+            </td>
+            <td>No video for recipe</td>
+            <td>80</td>
+            <td><a href="edit-recipe.html">Edit</a></td>
+            <td><a href="my-recipes.html">Delete</a></td>
+          </tr>
+
+        </tbody>
+      </table>
     </div>
-  </div>
+  </main>
 
-  <a href="add-recipe.html" class="btn add-btn">+ Add New Recipe</a>
-
-  <!-- table -->
-  <table class="table my-recipes-table">
-    <thead>
-      <tr>
-        <th>Recipe</th>
-        <th>Ingredients</th>
-        <th>Instructions</th>
-        <th>Video</th>
-        <th>Likes</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-
-    <tbody>
-
-      <!-- Sambosa -->
-      <tr>
-        <td>
-          <a href="view-recipe.html">
-            <img src="image/sambosa.png" class="recipe-img" alt="Sambosa"><br>
-            Sambosa
-          </a>
-        </td>
-        <td>
-          <ul>
-            <li>Flour – 200g</li>
-            <li>Potato – 150g</li>
-            <li>Spices – 1 tsp</li>
-          </ul>
-        </td>
-        <td>
-          <ol>
-            <li>Mix dough</li>
-            <li>Prepare filling</li>
-            <li>Fry until golden</li>
-          </ol>
-        </td>
-        <td>No video for recipe</td>
-        <td>45</td>
-        <td><a href="edit-recipe.html">Edit</a></td>
-        <td><a href="my-recipes.html">Delete</a></td>
-      </tr>
-
-      <!-- Bee Dessert -->
-      <tr>
-        <td>
-          <a href="view-recipe.html">
-            <img src="image/beehive.png" class="recipe-img" alt="Bee Dessert"><br>
-            Bee Dessert
-          </a>
-        </td>
-        <td>
-          <ul>
-            <li>Honey – 100g</li>
-            <li>Almonds – 50g</li>
-            <li>Sugar – 2 tbsp</li>
-          </ul>
-        </td>
-        <td>
-          <ol>
-            <li>Mix ingredients</li>
-            <li>Bake for 15 mins</li>
-          </ol>
-        </td>
-        <td>
-          <a href="#" class="btn small-btn">Watch Video</a>
-        </td>
-        <td>50</td>
-        <td><a href="edit-recipe.html">Edit</a></td>
-        <td><a href="my-recipes.html">Delete</a></td>
-      </tr>
-
-      <!-- Luqimat -->
-      <tr>
-        <td>
-          <a href="view-recipe.html">
-            <img src="image/luqimat.png" class="recipe-img" alt="Luqimat"><br>
-            Luqimat
-          </a>
-        </td>
-        <td>
-          <ul>
-            <li>Flour – 250g</li>
-            <li>Yeast – 5g</li>
-            <li>Sugar – 2 tbsp</li>
-          </ul>
-        </td>
-        <td>
-          <ol>
-            <li>Mix dough</li>
-            <li>Fry small balls until golden</li>
-          </ol>
-        </td>
-        <td>No video for recipe</td>
-        <td>80</td>
-        <td><a href="edit-recipe.html">Edit</a></td>
-        <td><a href="my-recipes.html">Delete</a></td>
-      </tr>
-
-    </tbody>
-  </table>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="container footer-row">
-    <p>© 2026 Ramadan Delights</p>
-    <div class="footer-icons">
-      <img src="image/email.png" alt="Email">
-      <img src="image/instagram.png" alt="Instagram">
-      <img src="image/twitter.png" alt="Twitter">
-      <img src="image/phone-call.png" alt="Phone">
-      <img src="image/whatsapp.png" alt="WhatsApp">
-      <img src="image/facebook.png" alt="Facebook">
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© 2026 Ramadan Delights</p>
+      <div class="footer-icons">
+        <img src="image/email.png" alt="Email" />
+        <img src="image/instagram.png" alt="Instagram" />
+        <img src="image/twitter.png" alt="Twitter" />
+        <img src="image/phone-call.png" alt="Phone" />
+        <img src="image/whatsapp.png" alt="WhatsApp" />
+        <img src="image/facebook.png" alt="Facebook" />
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
