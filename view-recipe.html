@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Recipe | Ramadan Delights</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-layout">
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="HomePage.html">
+      <img src="image/RamadanLogo.png" class="logo" alt="Logo">
+      <span class="brand-name">Ramadan Delights</span>
+    </a>
+
+    <nav class="nav">
+      <a href="user.html" class="nav-link">Dashboard</a>
+      <a href="my-recipes.html" class="nav-link nav-btn">My Recipes</a>
+      <a href="add-recipe.html" class="nav-link">Add Recipe</a>
+      <a href="HomePage.html" class="nav-link">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container view-page">
+  <h1 class="page-title">View Recipe</h1>
+
+  <div class="view-card">
+    <img id="v_photo" class="preview-img" src="image/sambosa.png" alt="Recipe photo">
+    <h2 id="v_title" class="view-title">—</h2>
+    <p id="v_desc" class="muted">—</p>
+
+    <h3 class="view-subtitle">Ingredients</h3>
+    <ul id="v_ingredients"></ul>
+
+    <h3 class="view-subtitle">Instructions</h3>
+    <ol id="v_steps"></ol>
+
+    <div id="v_video"></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <p class="footer-text">© 2026 Ramadan Delights</p>
+    <div class="footer-icons">
+      <a href="#"><img src="image/email.png" alt="Email"></a>
+      <a href="#"><img src="image/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="image/phone-call.png" alt="Phone"></a>
+      <a href="#"><img src="image/whatsapp.png" alt="WhatsApp"></a>
+      <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+<script src="recipes.js"></script>
+</body>
+</html>
