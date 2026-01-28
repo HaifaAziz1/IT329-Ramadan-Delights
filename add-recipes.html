@@ -1,131 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add Recipe | Ramadan Delights</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="page-layout">
+<body>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="container header-row">
-    <a href="HomePage.html" class="brand">
-      <img src="image/RamadanLogo.png" alt="Ramadan Delights Logo" class="logo">
-      <span class="brand-name">Ramadan Delights</span>
-    </a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="HomePage.html">
+        <img class="logo" src="image/RamadanLogo.png" alt="Ramadan Delights Logo" />
+        <span class="brand-name">Ramadan Delights</span>
+      </a>
 
-    <nav class="nav">
-      <a href="user.html" class="nav-link">Dashboard</a>
-      <a href="my-recipes.html" class="nav-link">My Recipes</a>
-      <a href="add-recipe.html" class="nav-link active">Add Recipe</a>
-      <a href="HomePage.html" class="nav-link">Logout</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ================= MAIN ================= -->
-<main class="container form-page">
-
-  <h1 class="page-title">Add New Recipe</h1>
-
-  <form id="addRecipeForm" class="recipe-form">
-
-    <!-- Name -->
-    <div class="form-row">
-      <label for="recipeName">Recipe Name *</label>
-      <input type="text" id="recipeName" name="recipeName" required>
+      <nav class="nav">
+        <a class="nav-link" href="user.html">Dashboard</a>
+        <a class="nav-link" href="my-recipes.html">My Recipes</a>
+        <a class="nav-link active" href="add-recipe.html">Add Recipe</a>
+        <a class="nav-link" href="HomePage.html">Logout</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Category -->
-    <div class="form-row">
-      <label for="category">Category *</label>
-      <select id="category" name="category" required>
-        <option value="" selected disabled>Select category</option>
-        <option>Appetizer</option>
-        <option>Main Dish</option>
-        <option>Side Dish</option>
-        <option>Dessert</option>
-        <option>Drink</option>
-      </select>
-    </div>
+  <main class="container page">
+    <h1 class="page-title">Add New Recipe</h1>
 
-    <!-- Description -->
-    <div class="form-row">
-      <label for="description">Description *</label>
-      <textarea id="description" name="description" rows="3" required></textarea>
-    </div>
-
-    <!-- Photo -->
-    <div class="form-row">
-      <label for="photo">Recipe Photo *</label>
-      <input type="file" id="photo" name="photo" accept="image/*" required>
-      <small class="hint">Upload any image (png/jpg).</small>
-    </div>
-
-    <!-- Ingredients -->
-    <div class="form-row">
-      <label>Ingredients (Name + Quantity) *</label>
-
-      <div id="ingredientsList" class="dynamic-list">
-        <div class="dynamic-item">
-          <input type="text" name="ingredientName[]" placeholder="Ingredient name" required>
-          <input type="text" name="ingredientQty[]" placeholder="Quantity (e.g., 200g)" required>
-          <button type="button" class="btn small-btn danger-btn remove-btn" disabled>Remove</button>
-        </div>
+    <form id="recipeForm" class="form">
+      <div class="form-row">
+        <label for="recipeName">Recipe Name *</label>
+        <input id="recipeName" name="recipeName" type="text" required />
       </div>
 
-      <button type="button" id="addIngredientBtn" class="btn small-btn">+ Add Ingredient</button>
-    </div>
-
-    <!-- Instructions -->
-    <div class="form-row">
-      <label>Instructions (Steps) *</label>
-
-      <div id="stepsList" class="dynamic-list">
-        <div class="dynamic-item">
-          <input type="text" name="step[]" placeholder="Step 1" required>
-          <button type="button" class="btn small-btn danger-btn remove-step-btn" disabled>Remove</button>
-        </div>
+      <div class="form-row">
+        <label for="category">Category *</label>
+        <select id="category" name="category" required>
+          <option value="" selected disabled>Select category</option>
+          <option value="Appetizer">Appetizer</option>
+          <option value="Main Dish">Main Dish</option>
+          <option value="Side Dish">Side Dish</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Drink">Drink</option>
+        </select>
       </div>
 
-      <button type="button" id="addStepBtn" class="btn small-btn">+ Add Step</button>
+      <div class="form-row">
+        <label for="description">Description *</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="photo">Photo *</label>
+        <input id="photo" name="photo" type="file" accept="image/*" required />
+      </div>
+
+      <div class="form-row">
+        <label>Ingredients *</label>
+
+        <div id="ingredientsList" class="dyn-list">
+          <div class="dyn-item">
+            <input name="ingredientName[]" type="text" placeholder="Ingredient name" required />
+            <input name="ingredientQty[]" type="text" placeholder="Quantity (e.g., 200g)" required />
+            <button type="button" class="btn small danger" id="removeIngredientFirst" disabled>Remove</button>
+          </div>
+        </div>
+
+        <button type="button" class="btn small" id="addIngredientBtn">+ Add Ingredient</button>
+      </div>
+
+      <div class="form-row">
+        <label>Instructions *</label>
+
+        <div id="stepsList" class="dyn-list">
+          <div class="dyn-item">
+            <input name="step[]" type="text" placeholder="Step 1" required />
+            <button type="button" class="btn small danger" id="removeStepFirst" disabled>Remove</button>
+          </div>
+        </div>
+
+        <button type="button" class="btn small" id="addStepBtn">+ Add Step</button>
+      </div>
+
+      <div class="form-row">
+        <label for="videoUrl">Video URL (Optional)</label>
+        <input id="videoUrl" name="videoUrl" type="url" placeholder="https://youtube.com/..." />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Save Recipe</button>
+        <a class="btn ghost" href="my-recipes.html">Cancel</a>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© 2026 Ramadan Delights</p>
+      <div class="footer-icons">
+        <img src="image/email.png" alt="Email" />
+        <img src="image/instagram.png" alt="Instagram" />
+        <img src="image/twitter.png" alt="Twitter" />
+        <img src="image/phone-call.png" alt="Phone" />
+        <img src="image/whatsapp.png" alt="WhatsApp" />
+        <img src="image/facebook.png" alt="Facebook" />
+      </div>
     </div>
+  </footer>
 
-    <!-- Video (optional) -->
-    <div class="form-row">
-      <label for="videoUrl">Video URL (Optional)</label>
-      <input type="url" id="videoUrl" name="videoUrl" placeholder="https://youtube.com/...">
-      <small class="hint">Leave empty to display: “No video for recipe”.</small>
-    </div>
-
-    <!-- Buttons -->
-    <div class="form-actions">
-      <button type="submit" class="btn add-btn">Save Recipe</button>
-      <a href="my-recipes.html" class="btn ghost-btn">Cancel</a>
-    </div>
-
-  </form>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="container footer-row">
-    <p>© 2026 Ramadan Delights</p>
-    <div class="footer-icons">
-      <img src="image/email.png" alt="Email">
-      <img src="image/instagram.png" alt="Instagram">
-      <img src="image/twitter.png" alt="Twitter">
-      <img src="image/phone-call.png" alt="Phone">
-      <img src="image/whatsapp.png" alt="WhatsApp">
-      <img src="image/facebook.png" alt="Facebook">
-    </div>
-  </div>
-</footer>
-
-<script src="add-recipe.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
