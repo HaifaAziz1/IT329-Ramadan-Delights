@@ -17,9 +17,8 @@
       </a>
 
       <nav class="nav">
-        <a class="nav-link" href="user.html">Dashboard</a>
         <a class="nav-link" href="my-recipes.html">My Recipes</a>
-        <a class="nav-link active" href="add-recipe.html">Add Recipe</a>
+        <a class="nav-link active" href="add-recipes.html">Add Recipe</a>
         <a class="nav-link" href="HomePage.html">Logout</a>
       </nav>
     </div>
@@ -29,31 +28,31 @@
     <h1 class="page-title">Add New Recipe</h1>
 
     <form id="recipeForm" class="form">
+
       <div class="form-row">
         <label for="recipeName">Recipe Name *</label>
-        <input id="recipeName" name="recipeName" type="text" required />
+        <input type="text" id="recipeName" required />
       </div>
 
       <div class="form-row">
         <label for="category">Category *</label>
-        <select id="category" name="category" required>
-          <option value="" selected disabled>Select category</option>
-          <option value="Appetizer">Appetizer</option>
-          <option value="Main Dish">Main Dish</option>
-          <option value="Side Dish">Side Dish</option>
-          <option value="Dessert">Dessert</option>
-          <option value="Drink">Drink</option>
+        <select id="category" required>
+          <option value="" disabled selected>Select category</option>
+          <option>Appetizer</option>
+          <option>Main Dish</option>
+          <option>Dessert</option>
+          <option>Drink</option>
         </select>
       </div>
 
       <div class="form-row">
         <label for="description">Description *</label>
-        <textarea id="description" name="description" rows="4" required></textarea>
+        <textarea id="description" rows="3" required></textarea>
       </div>
 
       <div class="form-row">
         <label for="photo">Photo *</label>
-        <input id="photo" name="photo" type="file" accept="image/*" required />
+        <input type="file" id="photo" accept="image/*" required />
       </div>
 
       <div class="form-row">
@@ -61,13 +60,13 @@
 
         <div id="ingredientsList" class="dyn-list">
           <div class="dyn-item">
-            <input name="ingredientName[]" type="text" placeholder="Ingredient name" required />
-            <input name="ingredientQty[]" type="text" placeholder="Quantity (e.g., 200g)" required />
-            <button type="button" class="btn small danger" id="removeIngredientFirst" disabled>Remove</button>
+            <input type="text" name="ingredientName[]" placeholder="Ingredient name" required />
+            <input type="text" name="ingredientQty[]" placeholder="Quantity" required />
+            <button type="button" class="btn small danger remove-ingredient" disabled>Remove</button>
           </div>
         </div>
 
-        <button type="button" class="btn small" id="addIngredientBtn">+ Add Ingredient</button>
+        <button type="button" id="addIngredientBtn" class="btn small">+ Add Ingredient</button>
       </div>
 
       <div class="form-row">
@@ -75,23 +74,24 @@
 
         <div id="stepsList" class="dyn-list">
           <div class="dyn-item">
-            <input name="step[]" type="text" placeholder="Step 1" required />
-            <button type="button" class="btn small danger" id="removeStepFirst" disabled>Remove</button>
+            <input type="text" name="step[]" placeholder="Step 1" required />
+            <button type="button" class="btn small danger remove-step" disabled>Remove</button>
           </div>
         </div>
 
-        <button type="button" class="btn small" id="addStepBtn">+ Add Step</button>
+        <button type="button" id="addStepBtn" class="btn small">+ Add Step</button>
       </div>
 
       <div class="form-row">
-        <label for="videoUrl">Video URL (Optional)</label>
-        <input id="videoUrl" name="videoUrl" type="url" placeholder="https://youtube.com/..." />
+        <label for="video">Video URL (Optional)</label>
+        <input type="url" id="video" placeholder="https://youtube.com/..." />
       </div>
 
       <div class="form-actions">
         <button type="submit" class="btn">Save Recipe</button>
-        <a class="btn ghost" href="my-recipes.html">Cancel</a>
+        <a href="my-recipes.html" class="btn ghost">Cancel</a>
       </div>
+
     </form>
   </main>
 
