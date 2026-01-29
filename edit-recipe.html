@@ -17,9 +17,9 @@
       </a>
 
       <nav class="nav">
-        <a class="nav-link" href="user.html">Dashboard</a>
         <a class="nav-link" href="my-recipes.html">My Recipes</a>
-        <a class="nav-link" href="add-recipe.html">Add Recipe</a>
+        <a class="nav-link" href="add-recipes.html">Add Recipe</a>
+        <a class="nav-link active" href="edit-recipe.html">Edit Recipe</a>
         <a class="nav-link" href="HomePage.html">Logout</a>
       </nav>
     </div>
@@ -29,31 +29,31 @@
     <h1 class="page-title">Edit Recipe</h1>
 
     <form id="recipeForm" class="form">
+
       <div class="form-row">
         <label for="recipeName">Recipe Name *</label>
-        <input id="recipeName" name="recipeName" type="text" value="Sambosa" required />
+        <input type="text" id="recipeName" value="Sambosa" required />
       </div>
 
       <div class="form-row">
         <label for="category">Category *</label>
-        <select id="category" name="category" required>
+        <select id="category" required>
           <option value="" disabled>Select category</option>
-          <option value="Appetizer" selected>Appetizer</option>
-          <option value="Main Dish">Main Dish</option>
-          <option value="Side Dish">Side Dish</option>
-          <option value="Dessert">Dessert</option>
-          <option value="Drink">Drink</option>
+          <option selected>Appetizer</option>
+          <option>Main Dish</option>
+          <option>Dessert</option>
+          <option>Drink</option>
         </select>
       </div>
 
       <div class="form-row">
         <label for="description">Description *</label>
-        <textarea id="description" name="description" rows="4" required>Classic Ramadan sambosa with potato filling.</textarea>
+        <textarea id="description" rows="3" required>Classic Ramadan sambosa with potato filling.</textarea>
       </div>
 
       <div class="form-row">
         <label for="photo">Photo *</label>
-        <input id="photo" name="photo" type="file" accept="image/*" required />
+        <input type="file" id="photo" accept="image/*" required />
       </div>
 
       <div class="form-row">
@@ -61,18 +61,18 @@
 
         <div id="ingredientsList" class="dyn-list">
           <div class="dyn-item">
-            <input name="ingredientName[]" type="text" value="Flour" required />
-            <input name="ingredientQty[]" type="text" value="200g" required />
-            <button type="button" class="btn small danger" disabled>Remove</button>
+            <input type="text" name="ingredientName[]" value="Flour" required />
+            <input type="text" name="ingredientQty[]" value="200g" required />
+            <button type="button" class="btn small danger remove-ingredient">Remove</button>
           </div>
           <div class="dyn-item">
-            <input name="ingredientName[]" type="text" value="Potato" required />
-            <input name="ingredientQty[]" type="text" value="150g" required />
-            <button type="button" class="btn small danger">Remove</button>
+            <input type="text" name="ingredientName[]" value="Potato" required />
+            <input type="text" name="ingredientQty[]" value="150g" required />
+            <button type="button" class="btn small danger remove-ingredient">Remove</button>
           </div>
         </div>
 
-        <button type="button" class="btn small" id="addIngredientBtn">+ Add Ingredient</button>
+        <button type="button" id="addIngredientBtn" class="btn small">+ Add Ingredient</button>
       </div>
 
       <div class="form-row">
@@ -80,27 +80,28 @@
 
         <div id="stepsList" class="dyn-list">
           <div class="dyn-item">
-            <input name="step[]" type="text" value="Mix dough" required />
-            <button type="button" class="btn small danger" disabled>Remove</button>
+            <input type="text" name="step[]" value="Mix dough" required />
+            <button type="button" class="btn small danger remove-step">Remove</button>
           </div>
           <div class="dyn-item">
-            <input name="step[]" type="text" value="Prepare filling" required />
-            <button type="button" class="btn small danger">Remove</button>
+            <input type="text" name="step[]" value="Prepare filling" required />
+            <button type="button" class="btn small danger remove-step">Remove</button>
           </div>
         </div>
 
-        <button type="button" class="btn small" id="addStepBtn">+ Add Step</button>
+        <button type="button" id="addStepBtn" class="btn small">+ Add Step</button>
       </div>
 
       <div class="form-row">
-        <label for="videoUrl">Video URL (Optional)</label>
-        <input id="videoUrl" name="videoUrl" type="url" value="" placeholder="https://youtube.com/..." />
+        <label for="video">Video URL (Optional)</label>
+        <input type="url" id="video" value="" placeholder="https://youtube.com/..." />
       </div>
 
       <div class="form-actions">
         <button type="submit" class="btn">Update Recipe</button>
-        <a class="btn ghost" href="my-recipes.html">Cancel</a>
+        <a href="my-recipes.html" class="btn ghost">Cancel</a>
       </div>
+
     </form>
   </main>
 
