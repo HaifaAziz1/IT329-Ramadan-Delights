@@ -1,78 +1,84 @@
-// ===== Add Recipe (Dynamic Fields + Redirect) =====
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("recipeForm");
+  if (!form) return;
 
-const ingredientsList = document.getElementById("ingredientsList");
-const stepsList = document.getElementById("stepsList");
-const addIngredientBtn = document.getElementById("addIngredientBtn");
-const addStepBtn = document.getElementById("addStepBtn");
-const form = document.getElementById("addRecipeForm");
+  const ingredientsList = document.getElementById("ingredientsList");
+  const stepsList = document.getElementById("stepsList");
+  const addIngredientBtn = document.getElementById("addIngredientBtn");
+  const addStepBtn = document.getElementById("addStepBtn");
 
-// Add ingredient row
-addIngredientBtn.addEventListener("click", () => {
-  const item = document.createElement("div");
-  item.className = "dynamic-item";
-  item.innerHTML = `
-    <input type="text" name="ingredientName[]" placeholder="Ingredient name" required>
-    <input type="text" name="ingredientQty[]" placeholder="Quantity (e.g., 200g)" required>
-    <button type="button" class="btn small-btn danger-btn remove-btn">Remove</button>
-  `;
-  ingredientsList.appendChild(item);
-  updateRemoveButtons();
+  if (!ingredientsList || !stepsList || !addIngredientBtn || !addStepBtn) return;
+
+  addIngredientBtn.addEventListener("click", () => {
+    const row = document.createElement("div");
+    row.className = "dyn-item";
+    row.innerHTML = `
+      <input name="ingredientName[]" type="text" placeholder="Ingredient name" required>
+      <input name="ingredientQty[]" type="text" placeholder="Quantity (e.g., 200g)" required>
+      <button type="button" class="btn small danger remove-ingredient">Remove</button>
+    `;
+    ingredientsList.appendChild(row);
+    updateRemoveState(ingredientsList, ".remove-ingredient");
+  });
+
+  ingredientsList.addEventListener("click", (e) => {
+    const btn = e.target.closest(".remove-ingredient");
+    if (!btn) return;
+
+    if (ingredientsList.querySelectorAll(".dyn-item").length > 1) {
+      btn.closest(".dyn-item").remove();
+    }
+    updateRemoveState(ingredientsList, ".remove-ingredient");
+  });
+
+  addStepBtn.addEventListener("click", () => {
+    const count = stepsList.querySelectorAll(".dyn-item").length + 1;
+
+    const row = document.createElement("div");
+    row.className = "dyn-item";
+    row.innerHTML = `
+      <input name="step[]" type="text" placeholder="Step ${count}" required>
+      <button type="button" class="btn small danger remove-step">Remove</button>
+    `;
+    stepsList.appendChild(row);
+    updateRemoveState(stepsList, ".remove-step");
+    renumberSteps(stepsList);
+  });
+
+  stepsList.addEventListener("click", (e) => {
+    const btn = e.target.closest(".remove-step");
+    if (!btn) return;
+
+    if (stepsList.querySelectorAll(".dyn-item").length > 1) {
+      btn.closest(".dyn-item").remove();
+    }
+    updateRemoveState(stepsList, ".remove-step");
+    renumberSteps(stepsList);
+  });
+
+  updateRemoveState(ingredientsList, ".remove-ingredient");
+  updateRemoveState(stepsList, ".remove-step");
+  renumberSteps(stepsList);
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    window.location.href = "my-recipes.html";
+  });
 });
 
-// Remove ingredient row
-ingredientsList.addEventListener("click", (e) => {
-  if (e.target.classList.contains("remove-btn")) {
-    e.target.parentElement.remove();
-    updateRemoveButtons();
-  }
-});
-
-function updateRemoveButtons() {
-  const removeBtns = ingredientsList.querySelectorAll(".remove-btn");
-  removeBtns.forEach(btn => btn.disabled = removeBtns.length === 1);
+function updateRemoveState(list, selector) {
+  const items = list.querySelectorAll(".dyn-item");
+  const buttons = list.querySelectorAll(selector);
+  buttons.forEach((btn) => {
+    btn.disabled = items.length === 1;
+  });
 }
 
-// Add step row
-addStepBtn.addEventListener("click", () => {
-  const count = stepsList.querySelectorAll(".dynamic-item").length + 1;
-
-  const item = document.createElement("div");
-  item.className = "dynamic-item";
-  item.innerHTML = `
-    <input type="text" name="step[]" placeholder="Step ${count}" required>
-    <button type="button" class="btn small-btn danger-btn remove-step-btn">Remove</button>
-  `;
-  stepsList.appendChild(item);
-  updateStepRemoveButtons();
-  renumberSteps();
-});
-
-// Remove step row
-stepsList.addEventListener("click", (e) => {
-  if (e.target.classList.contains("remove-step-btn")) {
-    e.target.parentElement.remove();
-    updateStepRemoveButtons();
-    renumberSteps();
-  }
-});
-
-function updateStepRemoveButtons() {
-  const removeBtns = stepsList.querySelectorAll(".remove-step-btn");
-  removeBtns.forEach(btn => btn.disabled = removeBtns.length === 1);
-}
-
-function renumberSteps() {
+function renumberSteps(stepsList) {
   const inputs = stepsList.querySelectorAll('input[name="step[]"]');
   inputs.forEach((inp, idx) => {
     inp.placeholder = `Step ${idx + 1}`;
   });
 }
-
-// On submit → redirect to my-recipes.html (as required)
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  // Phase 1: no backend, just redirect
-  window.location.href = "my-recipes.html";
-});
 // S-PAGE===================
 //==========================
