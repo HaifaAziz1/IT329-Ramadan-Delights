@@ -1,96 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edit Recipe | Ramadan Delights</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="page-layout">
 
-<header class="site-header">
-  <div class="container header-row">
-    <a class="brand" href="HomePage.html">
-      <img src="image/RamadanLogo.png" class="logo" alt="Logo">
-      <span class="brand-name">Ramadan Delights</span>
-    </a>
+<body>
 
-    <nav class="nav">
-      <a href="user.html" class="nav-link">Dashboard</a>
-      <a href="my-recipes.html" class="nav-link nav-btn">My Recipes</a>
-      <a href="add-recipe.html" class="nav-link">Add Recipe</a>
-      <a href="HomePage.html" class="nav-link">Logout</a>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="HomePage.html">
+        <img class="logo" src="image/RamadanLogo.png" alt="Ramadan Delights Logo" />
+        <span class="brand-name">Ramadan Delights</span>
+      </a>
 
-<main class="container add-recipe-page">
-  <h1 class="page-title">Edit Recipe</h1>
-
-  <form id="editRecipeForm" novalidate>
-    <div class="form-group">
-      <label for="e_title">Recipe Name</label>
-      <input id="e_title" type="text" class="input-field" required>
+      <nav class="nav">
+        <a class="nav-link" href="user.html">Dashboard</a>
+        <a class="nav-link" href="my-recipes.html">My Recipes</a>
+        <a class="nav-link" href="add-recipe.html">Add Recipe</a>
+        <a class="nav-link" href="HomePage.html">Logout</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="form-group">
-      <label for="e_category">Category</label>
-      <select id="e_category" class="input-field" required>
-        <option>Appetizer</option>
-        <option>Main Dish</option>
-        <option>Dessert</option>
-        <option>Side Dish</option>
-        <option>Drink</option>
-      </select>
+  <main class="container page">
+    <h1 class="page-title">Edit Recipe</h1>
+
+    <form id="recipeForm" class="form">
+      <div class="form-row">
+        <label for="recipeName">Recipe Name *</label>
+        <input id="recipeName" name="recipeName" type="text" value="Sambosa" required />
+      </div>
+
+      <div class="form-row">
+        <label for="category">Category *</label>
+        <select id="category" name="category" required>
+          <option value="" disabled>Select category</option>
+          <option value="Appetizer" selected>Appetizer</option>
+          <option value="Main Dish">Main Dish</option>
+          <option value="Side Dish">Side Dish</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Drink">Drink</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="description">Description *</label>
+        <textarea id="description" name="description" rows="4" required>Classic Ramadan sambosa with potato filling.</textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="photo">Photo *</label>
+        <input id="photo" name="photo" type="file" accept="image/*" required />
+      </div>
+
+      <div class="form-row">
+        <label>Ingredients *</label>
+
+        <div id="ingredientsList" class="dyn-list">
+          <div class="dyn-item">
+            <input name="ingredientName[]" type="text" value="Flour" required />
+            <input name="ingredientQty[]" type="text" value="200g" required />
+            <button type="button" class="btn small danger" disabled>Remove</button>
+          </div>
+          <div class="dyn-item">
+            <input name="ingredientName[]" type="text" value="Potato" required />
+            <input name="ingredientQty[]" type="text" value="150g" required />
+            <button type="button" class="btn small danger">Remove</button>
+          </div>
+        </div>
+
+        <button type="button" class="btn small" id="addIngredientBtn">+ Add Ingredient</button>
+      </div>
+
+      <div class="form-row">
+        <label>Instructions *</label>
+
+        <div id="stepsList" class="dyn-list">
+          <div class="dyn-item">
+            <input name="step[]" type="text" value="Mix dough" required />
+            <button type="button" class="btn small danger" disabled>Remove</button>
+          </div>
+          <div class="dyn-item">
+            <input name="step[]" type="text" value="Prepare filling" required />
+            <button type="button" class="btn small danger">Remove</button>
+          </div>
+        </div>
+
+        <button type="button" class="btn small" id="addStepBtn">+ Add Step</button>
+      </div>
+
+      <div class="form-row">
+        <label for="videoUrl">Video URL (Optional)</label>
+        <input id="videoUrl" name="videoUrl" type="url" value="" placeholder="https://youtube.com/..." />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Update Recipe</button>
+        <a class="btn ghost" href="my-recipes.html">Cancel</a>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© 2026 Ramadan Delights</p>
+      <div class="footer-icons">
+        <img src="image/email.png" alt="Email" />
+        <img src="image/instagram.png" alt="Instagram" />
+        <img src="image/twitter.png" alt="Twitter" />
+        <img src="image/phone-call.png" alt="Phone" />
+        <img src="image/whatsapp.png" alt="WhatsApp" />
+        <img src="image/facebook.png" alt="Facebook" />
+      </div>
     </div>
+  </footer>
 
-    <div class="form-group">
-      <label for="e_desc">Description</label>
-      <textarea id="e_desc" class="input-field" rows="3" required></textarea>
-    </div>
-
-    <div class="form-group">
-      <label>Ingredients (name + quantity)</label>
-      <div id="e_ingredientsContainer" class="stack"></div>
-      <button type="button" class="btn" id="e_addIngredientBtn">+ Add Ingredient</button>
-    </div>
-
-    <div class="form-group">
-      <label>Instructions</label>
-      <div id="e_stepsContainer" class="stack"></div>
-      <button type="button" class="btn" id="e_addStepBtn">+ Add Step</button>
-    </div>
-
-    <div class="form-group">
-      <label>Photo</label>
-      <input id="e_photo" type="file" class="input-field" accept="image/*">
-      <img id="e_preview" class="preview-img" src="image/sambosa.png" alt="Preview">
-    </div>
-
-    <div class="form-group">
-      <label for="e_video">Video URL (optional)</label>
-      <input id="e_video" type="url" class="input-field" placeholder="https://">
-    </div>
-
-    <button type="submit" class="btn">Save Changes</button>
-  </form>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-row">
-    <p class="footer-text">© 2026 Ramadan Delights</p>
-    <div class="footer-icons">
-      <a href="#"><img src="image/email.png" alt="Email"></a>
-      <a href="#"><img src="image/instagram.png" alt="Instagram"></a>
-      <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
-      <a href="#"><img src="image/phone-call.png" alt="Phone"></a>
-      <a href="#"><img src="image/whatsapp.png" alt="WhatsApp"></a>
-      <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
-    </div>
-  </div>
-</footer>
-
-<div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
-<script src="recipes.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
