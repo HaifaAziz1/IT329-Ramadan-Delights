@@ -13,12 +13,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const row = document.createElement("div");
     row.className = "dyn-item";
     row.innerHTML = `
-      <input name="ingredientName[]" type="text" placeholder="Ingredient name" required>
-      <input name="ingredientQty[]" type="text" placeholder="Quantity (e.g., 200g)" required>
+      <input type="text" name="ingredientName[]" placeholder="Ingredient name" required />
+      <input type="text" name="ingredientQty[]" placeholder="Quantity" required />
       <button type="button" class="btn small danger remove-ingredient">Remove</button>
     `;
     ingredientsList.appendChild(row);
-    updateRemoveState(ingredientsList, ".remove-ingredient");
+    updateRemoveButtons();
+  });
+
+  addStepBtn.addEventListener("click", () => {
+    const count = stepsList.querySelectorAll(".dyn-item").length + 1;
+
+    const row = document.createElement("div");
+    row.className = "dyn-item";
+    row.innerHTML = `
+      <input type="text" name="step[]" placeholder="Step ${count}" required />
+      <button type="button" class="btn small danger remove-step">Remove</button>
+    `;
+    stepsList.appendChild(row);
+    renumberSteps();
+    updateRemoveButtons();
   });
 
   ingredientsList.addEventListener("click", (e) => {
@@ -28,21 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (ingredientsList.querySelectorAll(".dyn-item").length > 1) {
       btn.closest(".dyn-item").remove();
     }
-    updateRemoveState(ingredientsList, ".remove-ingredient");
-  });
-
-  addStepBtn.addEventListener("click", () => {
-    const count = stepsList.querySelectorAll(".dyn-item").length + 1;
-
-    const row = document.createElement("div");
-    row.className = "dyn-item";
-    row.innerHTML = `
-      <input name="step[]" type="text" placeholder="Step ${count}" required>
-      <button type="button" class="btn small danger remove-step">Remove</button>
-    `;
-    stepsList.appendChild(row);
-    updateRemoveState(stepsList, ".remove-step");
-    renumberSteps(stepsList);
+    updateRemoveButtons();
   });
 
   stepsList.addEventListener("click", (e) => {
@@ -52,33 +52,35 @@ document.addEventListener("DOMContentLoaded", () => {
     if (stepsList.querySelectorAll(".dyn-item").length > 1) {
       btn.closest(".dyn-item").remove();
     }
-    updateRemoveState(stepsList, ".remove-step");
-    renumberSteps(stepsList);
+    renumberSteps();
+    updateRemoveButtons();
   });
-
-  updateRemoveState(ingredientsList, ".remove-ingredient");
-  updateRemoveState(stepsList, ".remove-step");
-  renumberSteps(stepsList);
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     window.location.href = "my-recipes.html";
   });
+
+  function updateRemoveButtons() {
+    const ingItems = ingredientsList.querySelectorAll(".dyn-item");
+    const ingBtns = ingredientsList.querySelectorAll(".remove-ingredient");
+    ingBtns.forEach((b) => (b.disabled = ingItems.length === 1));
+
+    const stepItems = stepsList.querySelectorAll(".dyn-item");
+    const stepBtns = stepsList.querySelectorAll(".remove-step");
+    stepBtns.forEach((b) => (b.disabled = stepItems.length === 1));
+  }
+
+  function renumberSteps() {
+    const inputs = stepsList.querySelectorAll('input[name="step[]"]');
+    inputs.forEach((inp, idx) => {
+      inp.placeholder = `Step ${idx + 1}`;
+    });
+  }
+
+  updateRemoveButtons();
+  renumberSteps();
 });
 
-function updateRemoveState(list, selector) {
-  const items = list.querySelectorAll(".dyn-item");
-  const buttons = list.querySelectorAll(selector);
-  buttons.forEach((btn) => {
-    btn.disabled = items.length === 1;
-  });
-}
-
-function renumberSteps(stepsList) {
-  const inputs = stepsList.querySelectorAll('input[name="step[]"]');
-  inputs.forEach((inp, idx) => {
-    inp.placeholder = `Step ${idx + 1}`;
-  });
-}
 // S-PAGE===================
 //==========================
