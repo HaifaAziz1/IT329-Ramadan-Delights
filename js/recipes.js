@@ -84,3 +84,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // S-PAGE===================
 //==========================
+// =========================
+// User Dashboard (UI only)
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const filterBtn = document.getElementById("filterBtn");
+  const categoryFilter = document.getElementById("categoryFilter");
+  const allRecipesTable = document.getElementById("allRecipesTable");
+
+  
+  if (!filterBtn || !categoryFilter || !allRecipesTable) return;
+
+  // Filter All Recipes
+  filterBtn.addEventListener("click", () => {
+    const selected = categoryFilter.value; // all / iftar / dessert / drink
+    const rows = allRecipesTable.querySelectorAll("tbody tr");
+
+    rows.forEach((row) => {
+      const rowCategory = row.getAttribute("data-category");
+      row.style.display =
+        selected === "all" || rowCategory === selected ? "" : "none";
+    });
+
+    alert("Filter applied ✅");
+  });
+
+  // Remove Favourite (UI only)
+  document.addEventListener("click", (e) => {
+    const removeBtn = e.target.closest(".remove-fav");
+    if (!removeBtn) return;
+
+    const row = removeBtn.closest("tr");
+    if (row) row.remove();
+
+    alert("Removed from favourites ✅");
+  });
+});
