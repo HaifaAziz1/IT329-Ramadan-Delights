@@ -293,6 +293,128 @@ textarea{ resize:vertical; }
   .table-wrap{ overflow-x:auto; }
   .table{ min-width: 950px; }
 }
+/* ========================= */
+/* User Dashboard Page */
+/* ========================= */
+
+.user-dashboard{
+  padding: 34px 0 70px;
+}
+
+.user-dashboard h2{
+  margin: 0 0 16px;
+  font-size: 30px;
+  letter-spacing: .2px;
+}
+
+.user-dashboard h3{
+  margin: 22px 0 12px;
+  font-size: 20px;
+}
+
+/* User Info Box */
+.user-info-box{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.profile-pic{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(96,121,117,.35);
+  background: rgba(0,0,0,.04);
+  flex: 0 0 auto;
+}
+
+.user-details p{
+  margin: 6px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.user-details strong{
+  color: var(--text);
+}
+
+/* Stats */
+.user-stats{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap: wrap;
+  background: rgba(96,121,117,.08);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.user-stats p{
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.user-stats strong{
+  color: var(--text);
+}
+
+/* Filter box */
+.filter-box{
+  display:flex;
+  gap:10px;
+  flex-wrap: wrap;
+  align-items:center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.filter-box select{
+  width: min(280px, 100%);
+}
+
+/* Creator image */
+.creator-img{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(28,42,42,.12);
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Link-like buttons */
+.link-btn{
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--main);
+  font-weight: 900;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Nav button style (Sign out) */
+.nav-btn{
+  background: rgba(255,255,255,.18);
+}
+.nav-btn:hover{
+  background: rgba(255,255,255,.26);
+}
 
 @media (max-width: 650px){
   .recipe-link{ min-width: unset; }
