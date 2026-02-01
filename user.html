@@ -66,54 +66,88 @@
       <button id="filterBtn" class="btn">Filter</button>
     </div>
 
-    <table class="table">
-      <tr>
-        <th>Name</th>
-        <th>Photo</th>
-        <th>Creator</th>
-        <th>Likes</th>
-        <th>Category</th>
-      </tr>
+    <div class="table-wrap">
+      <table class="table" id="allRecipesTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Creator</th>
+            <th>Likes</th>
+            <th>Category</th>
+          </tr>
+        </thead>
 
-      <tr>
-        <td><a href="view-recipe.html">Samosa</a></td>
-        <td><img src="image/samosa.jpg" class="recipe-img"></td>
-        <td>
-          <img src="image/user1.jpg" class="creator-img">
-          Sara Ali
-        </td>
-        <td>15</td>
-        <td>Iftar</td>
-      </tr>
+        <tbody>
+          <tr data-category="iftar">
+            <td><a href="view-recipe.html">Kabsa</a></td>
+            <td><img src="image/kabsa.png" class="recipe-img" alt="Kabsa"></td>
+            <td>
+              <img src="image/default-user.png" class="creator-img" alt="Creator">
+              Sara Ali
+            </td>
+            <td>15</td>
+            <td>Iftar</td>
+          </tr>
 
-      <tr>
-        <td><a href="view-recipe.html">Kunafa</a></td>
-        <td><img src="image/kunafa.jpg" class="recipe-img"></td>
-        <td>
-          <img src="image/user2.jpg" class="creator-img">
-          Aisha Noor
-        </td>
-        <td>23</td>
-        <td>Dessert</td>
-      </tr>
-    </table>
+          <tr data-category="dessert">
+            <td><a href="view-recipe.html">Kunafah</a></td>
+            <td><img src="image/kunafah.png" class="recipe-img" alt="Kunafah"></td>
+            <td>
+              <img src="image/default-user.png" class="creator-img" alt="Creator">
+              Aisha Noor
+            </td>
+            <td>23</td>
+            <td>Dessert</td>
+          </tr>
+
+          <tr data-category="dessert">
+            <td><a href="view-recipe.html">Luqimat</a></td>
+            <td><img src="image/luqimat.png" class="recipe-img" alt="Luqimat"></td>
+            <td>
+              <img src="image/default-user.png" class="creator-img" alt="Creator">
+              Dana
+            </td>
+            <td>18</td>
+            <td>Dessert</td>
+          </tr>
+
+          <tr data-category="iftar">
+            <td><a href="view-recipe.html">Macaroni</a></td>
+            <td><img src="image/macaroni.png" class="recipe-img" alt="Macaroni"></td>
+            <td>
+              <img src="image/default-user.png" class="creator-img" alt="Creator">
+              Noura
+            </td>
+            <td>12</td>
+            <td>Iftar</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- Favourites -->
     <h3>My Favourite Recipes</h3>
 
-    <table class="table">
-      <tr>
-        <th>Name</th>
-        <th>Photo</th>
-        <th>Action</th>
-      </tr>
+    <div class="table-wrap">
+      <table class="table" id="favTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Action</th>
+          </tr>
+        </thead>
 
-      <tr>
-        <td><a href="view-recipe.html">Dates Cake</a></td>
-        <td><img src="image/dates-cake.jpg" class="recipe-img"></td>
-        <td><a href="#" onclick="removeFav()">Remove</a></td>
-      </tr>
-    </table>
+        <tbody>
+          <tr>
+            <td><a href="view-recipe.html">Kunafah</a></td>
+            <td><img src="image/kunafah.png" class="recipe-img" alt="Kunafah"></td>
+            <td><button type="button" class="link-btn remove-fav">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
   </section>
 </main>
@@ -121,7 +155,7 @@
 <!-- ====== FOOTER ====== -->
 <footer class="site-footer">
   <div class="container footer-row">
-    <p class="footer-text">© 2026 Ramadan Delights. All rights reserved.</p>
+    <p class="footer-text">©️ 2026 Ramadan Delights. All rights reserved.</p>
 
     <div class="footer-icons">
       <a href="#"><img src="image/email.png" alt="email"></a>
