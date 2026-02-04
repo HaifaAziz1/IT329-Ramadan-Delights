@@ -1,0 +1,275 @@
+:root{
+  --main: #607975;
+  --light: #e8eeda;
+  --white: #ffffff;
+  --text: #1c2a2a;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+/* ===== كود صديقتك ===== */
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--light);
+  color: var(--text);
+}
+
+.container{
+  width: min(1000px, 92%);
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.site-header{
+  background: var(--main);
+  padding: 10px 0;
+}
+
+.header-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.logo{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--light);
+  padding: 4px;
+}
+
+.brand-name{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* ===== NAV ===== */
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link{
+  color: var(--white);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.nav-link:hover{
+  background: rgba(255,255,255,0.15);
+}
+
+.nav-btn{
+  background: var(--light);
+  color: var(--main);
+  font-weight: bold;
+}
+
+.nav-btn:hover{
+  background: #dfe6cf;
+}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  background: var(--main);
+  color: var(--white);
+  padding: 14px 0;
+  margin-top: 40px;
+}
+
+.footer-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.footer-text{
+  margin: 0;
+  font-size: 13px;
+}
+
+.footer-icons{
+  display: flex;
+  gap: 10px;
+}
+
+.footer-icons img{
+  width: 20px;
+  height: 20px;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+/* Responsive بسيط */
+@media (max-width: 650px){
+  .header-row,
+  .footer-row{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav{
+    flex-wrap: wrap;
+  }
+}
+
+/* ================================================= */
+/* ===== الكود اللي طلبتيه (الفوتر دايم تحت) ===== */
+html, body{
+  height: 100%;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
+}
+/* ================================================= */
+
+/* ===== كودك أنتِ (Admin Page) ===== */
+
+/* sections */
+section{
+  margin-bottom: 30px;
+}
+
+/* tables */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: var(--white);
+}
+
+th, td{
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th{
+  background: var(--light);
+}
+
+/* buttons */
+button{
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+button:first-child{
+  background: #c0392b; /* Block */
+  color: white;
+}
+
+button:last-child{
+  background: #7f8c8d; /* Dismiss *
+/* =============================== */
+/* View Recipe Page (Phase 1 only) */
+/* =============================== */
+
+.recipe-photo{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.creator-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.creator-row img{
+  border-radius: 50%;
+}
+
+.actions-row{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.comments-box{
+  background: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.comments-box hr{
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 12px 0;
+}
+
+textarea{
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+}
+/* ===== View & Edit Recipe (Required only) ===== */
+
+/* صورة الوصفة */
+.recipe-photo{
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* أزرار أعلى صفحة العرض */
+.actions-row{
+  margin: 15px 0;
+}
+
+/* صف اسم وصورة الكرييتر */
+.creator-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* صندوق التعليقات */
+.comments-box{
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* textarea للتعليقات والوصف */
+textarea{
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
