@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Ramadan Delights</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== HEADER (Guest) ===== -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="HomePage.html">
+        <img src="image/RamadanLogo.png" alt="Logo" class="logo">
+        <span class="brand-name">Ramadan Delights</span>
+      </a>
+
+      <nav class="nav">
+        <a href="HomePage.html" class="nav-link">Home</a>
+        <a href="Login.html" class="nav-link">Login</a>
+        <a href="Signup.html" class="nav-link nav-btn">Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="container auth-main">
+    <section class="auth-box">
+      <h1 class="auth-title">Login</h1>
+      <p class="auth-subtitle">Choose login type (User / Admin).</p>
+
+      <form id="loginForm" class="auth-form">
+        <label class="auth-label" for="email">Email</label>
+        <input class="auth-input" type="email" id="email" placeholder="name@example.com" required>
+
+        <label class="auth-label" for="password">Password</label>
+        <input class="auth-input" type="password" id="password" placeholder="********" required>
+
+        <div class="auth-buttons">
+          <button type="submit" class="btn primary" id="loginUserBtn">Login as User</button>
+          <button type="button" class="btn outline" id="loginAdminBtn">Login as Admin</button>
+        </div>
+
+        <p class="auth-hint">
+          Don’t have an account? <a href="Signup.html">Sign Up</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p class="footer-text">© 2026 Ramadan Delights. All rights reserved.</p>
+
+      <div class="footer-icons">
+        <a href="#"><img src="image/email.png" alt="email"></a>
+        <a href="#"><img src="image/instagram.png" alt="instagram"></a>
+        <a href="#"><img src="image/twitter.png" alt="twitter"></a>
+        <a href="#"><img src="image/phone-call.png" alt="phone"></a>
+        <a href="#"><img src="image/whatsapp.png" alt="whatsapp"></a>
+        <a href="#"><img src="image/facebook.png" alt="facebook"></a>
+      </div>
+    </div>
+  </footer>
+
+ <script src="script.js"></script>
+
+</body>
+</html>
