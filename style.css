@@ -787,5 +787,86 @@ main{
   .two-cols{ grid-template-columns: 1fr; }
 }
 /* =====  Signup (Auth Pages) نهايه===== */
- 
+/* =========================
+   USER DASHBOARD – FINAL FIX
+   (safe + unified, no conflicts)
+   ========================= */
+
+.user-dashboard{
+  margin-top: 30px;
+}
+
+/* User info card */
+.user-dashboard .user-info-box{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--white);
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+/* Profile picture (circle) */
+.user-dashboard .profile-pic{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--main);
+  background: var(--light);
+}
+
+/* User details text */
+.user-dashboard .user-details p{
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Stats row */
+.user-dashboard .user-stats{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: rgba(96,121,117,0.12);
+  padding: 16px;
+  border-radius: 18px;
+  margin-bottom: 25px;
+}
+
+/* Filter row */
+.user-dashboard .filter-box{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0 14px;
+}
+
+/* Creator small image in tables */
+.user-dashboard .creator-img{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* Remove button (favourites) */
+.user-dashboard .link-btn{
+  background: none;
+  border: none;
+  color: var(--main);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+
+.user-dashboard .link-btn:hover{
+  text-decoration: underline;
+} 
+
 
