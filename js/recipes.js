@@ -90,13 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
 // =========================
 
 
-  // Remove Favourite (UI only)
-  document.addEventListener("click", (e) => {
-    const removeBtn = e.target.closest(".remove-fav");
-    if (!removeBtn) return;
+ // ===== Remove Favourite (UI only) =====
+document.addEventListener("click", function (e) {
+  const btn = e.target.closest(".remove-fav");
+  if (!btn) return;
 
-    const row = removeBtn.closest("tr");
-    if (row) row.remove();
-
-  });
+  const row = btn.closest("tr");
+  if (row) row.remove();
+});
 });
