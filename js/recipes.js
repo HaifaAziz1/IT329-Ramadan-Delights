@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("recipeForm");
   if (!form) return;
+  
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    window.location.href = "my-recipes.html";
+  });
 
   const ingredientsList = document.getElementById("ingredientsList");
   const stepsList = document.getElementById("stepsList");
@@ -56,10 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateRemoveButtons();
   });
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    window.location.href = "my-recipes.html";
-  });
 
   function updateRemoveButtons() {
     const ingItems = ingredientsList.querySelectorAll(".dyn-item");
