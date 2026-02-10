@@ -88,27 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // =========================
 // User Dashboard (UI only)
 // =========================
-document.addEventListener("DOMContentLoaded", () => {
-  const filterBtn = document.getElementById("filterBtn");
-  const categoryFilter = document.getElementById("categoryFilter");
-  const allRecipesTable = document.getElementById("allRecipesTable");
 
-  
-  if (!filterBtn || !categoryFilter || !allRecipesTable) return;
-
-  // Filter All Recipes
-  filterBtn.addEventListener("click", () => {
-    const selected = categoryFilter.value; 
-    const rows = allRecipesTable.querySelectorAll("tbody tr");
-
-    rows.forEach((row) => {
-      const rowCategory = row.getAttribute("data-category");
-      row.style.display =
-        selected === "all" || rowCategory === selected ? "" : "none";
-    });
-
-    alert("Filter applied ✅");
-  });
 
   // Remove Favourite (UI only)
   document.addEventListener("click", (e) => {
