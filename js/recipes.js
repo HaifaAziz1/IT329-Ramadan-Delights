@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Filter All Recipes
   filterBtn.addEventListener("click", () => {
-    const selected = categoryFilter.value; // all / iftar / dessert / drink
+    const selected = categoryFilter.value; 
     const rows = allRecipesTable.querySelectorAll("tbody tr");
 
     rows.forEach((row) => {
