@@ -98,6 +98,5 @@ document.addEventListener("DOMContentLoaded", () => {
     const row = removeBtn.closest("tr");
     if (row) row.remove();
 
-    alert("Removed from favourites ✅");
   });
 });
