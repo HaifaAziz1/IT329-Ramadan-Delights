@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateRemoveButtons();
   renumberSteps();
-});
+
 
 // S-PAGE===================
 //==========================
