@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateRemoveButtons();
   renumberSteps();
-
+});
 
 // S-PAGE===================
 //==========================
@@ -89,13 +89,42 @@ document.addEventListener("DOMContentLoaded", () => {
 // User Dashboard (UI only)
 // =========================
 
+// =========================
+// User Dashboard (UI only)
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
 
- // ===== Remove Favourite (UI only) =====
-document.addEventListener("click", function (e) {
-  const btn = e.target.closest(".remove-fav");
-  if (!btn) return;
+  const filterBtn = document.getElementById("filterBtn");
+  const categoryFilter = document.getElementById("categoryFilter");
+  const allRecipesTable = document.getElementById("allRecipesTable");
 
-  const row = btn.closest("tr");
-  if (row) row.remove();
-});
+  // =====================
+  // Filter (UI only)
+  // =====================
+  if (filterBtn && categoryFilter && allRecipesTable) {
+    filterBtn.addEventListener("click", () => {
+      const selected = categoryFilter.value;
+      const rows = allRecipesTable.querySelectorAll("tbody tr");
+
+      rows.forEach((row) => {
+        const rowCategory = row.getAttribute("data-category");
+        row.style.display =
+          selected === "all" || rowCategory === selected ? "" : "none";
+      });
+
+      alert("Filter applied ✅");
+    });
+  }
+
+  // =====================
+  // Remove Favourite (UI only)
+  // =====================
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".remove-fav");
+    if (!btn) return;
+
+    const row = btn.closest("tr");
+    if (row) row.remove();
+  });
+
 });
